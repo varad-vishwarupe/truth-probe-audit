@@ -1,0 +1,39 @@
+{'fold': 0, 'layer': 8, 'C': 0.01, 'inner_acc': 0.840625, 'outer_acc': 0.8, 'outer_within_negation_strata': 0.6733333333333333}
+{'fold': 1, 'layer': 8, 'C': 0.003, 'inner_acc': 0.8125, 'outer_acc': 0.9041666666666667, 'outer_within_negation_strata': 0.7463121118012422}
+{'fold': 2, 'layer': 9, 'C': 0.01, 'inner_acc': 0.8291666666666666, 'outer_acc': 0.7875, 'outer_within_negation_strata': 0.6608391608391608}
+{'fold': 3, 'layer': 8, 'C': 0.003, 'inner_acc': 0.8406250000000001, 'outer_acc': 0.8166666666666667, 'outer_within_negation_strata': 0.6567460317460317}
+{'fold': 4, 'layer': 8, 'C': 0.01, 'inner_acc': 0.8677083333333333, 'outer_acc': 0.7875, 'outer_within_negation_strata': 0.7057291666666666}
+{
+  "headline_naive": 0.9916666666666667,
+  "nested_grouped_acc": 0.8191666666666667,
+  "wilson_95ci": [
+    0.7963824614613646,
+    0.8399138751995383
+  ],
+  "within_negation_strata_bal_acc": {
+    "mean": 0.6845181476229864,
+    "per_stratum": {
+      "0": 0.6609318996415771,
+      "1": 0.7081043956043956
+    }
+  },
+  "controls": {
+    "shuffled_labels_under_naive_split_layer8": 0.7016666666666665,
+    "shuffled_labels_under_grouped_split_layer8": 0.4866666666666667,
+    "naive_split_overlap_statement": {
+      "test_rows_sharing_group": 236,
+      "frac_test_rows_sharing_group": 0.9833333333333333
+    },
+    "naive_split_overlap_fact": {
+      "test_rows_sharing_group": 240,
+      "frac_test_rows_sharing_group": 1.0
+    },
+    "surface_baselines_grouped_cv": {
+      "n_chars": 0.5416666666666667,
+      "n_words": 0.5549999999999999,
+      "has_negation": 0.7633333333333334,
+      "has_digit": 0.5,
+      "domain": 0.5
+    }
+  }
+}

@@ -62,8 +62,12 @@ for k, (tr, te) in enumerate(outer.split(acts, y, facts)):
 
 pred = np.empty_like(y); pred[np.concatenate(all_idx)] = np.concatenate(all_pred)
 acc = float((pred == y).mean())
-k = int((pred == y).sum())
 strat = V.stratified_score(y, pred, neg)
+# rows are clustered (8 per fact), so CIs resample whole facts, not rows
+acc_ci = V.cluster_bootstrap_ci(y, pred, facts)
+strat_ci = V.cluster_bootstrap_ci(
+    y, pred, facts, metric=lambda i: V.stratified_score(y[i], pred[i], neg[i])["mean"])
+chosen_layers = [r["layer"] for r in fold_rows]
 
 # ---- controls
 fp_naive = make_fp(1.0)
@@ -91,8 +95,9 @@ naive_curve = [r["test_acc"] for r in json.load(open("results/naive_results.json
 
 out = {
     "headline_naive": max(naive_curve),
-    "nested_grouped_acc": acc, "wilson_95ci": V.wilson_ci(k, len(y)),
-    "within_negation_strata_bal_acc": strat,
+    "nested_grouped_acc": acc, "nested_grouped_acc_fact_clustered_95ci": acc_ci,
+    "within_negation_strata_bal_acc": strat, "within_strata_fact_clustered_95ci": strat_ci,
+    "chosen_layers_per_outer_fold": chosen_layers,
     "folds": fold_rows,
     "controls": {
         "shuffled_labels_under_naive_split_layer8": shuf_naive,
@@ -119,3 +124,14 @@ ax.set_title("Same activations, same probe: what the number means depends on the
 ax.legend(fontsize=7.5, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=2, frameon=False)
 fig.tight_layout(); fig.savefig("results/before_after.png", dpi=160)
 print(json.dumps({k: v for k, v in out.items() if k not in ("curves", "folds")}, indent=2))
+
+# ---- the sentence the numbers support (metrics labelled; CIs fact-clustered)
+print(f"""
+REPORT
+  accuracy, naive split, best layer picked on test : {max(naive_curve):.3f}
+  accuracy, nested fact-grouped CV                 : {acc:.3f}  [{acc_ci[0]:.2f}, {acc_ci[1]:.2f}]
+  accuracy, 'contains not' baseline                : {baselines['has_negation']:.3f}
+  accuracy, shuffled-label null (grouped split)    : {shuf_group:.3f}
+  BALANCED accuracy within negation strata (nested): {strat['mean']:.3f}  [{strat_ci[0]:.2f}, {strat_ci[1]:.2f}]
+  layer chosen per outer fold                      : {chosen_layers}
+""")

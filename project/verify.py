@@ -96,7 +96,25 @@ def stratified_score(y_true, y_pred, strata) -> dict:
 
 
 # ---------------------------------------------------------------- stats
+def cluster_bootstrap_ci(y_true, y_pred, clusters, metric=None, n_boot=2000, seed=0,
+                         alpha=0.05):
+    """CI that respects clustering (e.g. 8 paraphrase rows per fact). Resamples whole
+    clusters with replacement. Use this, not wilson_ci, whenever rows are not
+    independent; otherwise the interval is too narrow.
+    `metric(idx) -> float` lets you bootstrap any score, e.g. a stratified one."""
+    y_true, y_pred, clusters = map(np.asarray, (y_true, y_pred, clusters))
+    metric = metric or (lambda idx: float(np.mean(y_true[idx] == y_pred[idx])))
+    rng = np.random.default_rng(seed)
+    uniq = np.unique(clusters)
+    members = {c: np.flatnonzero(clusters == c) for c in uniq}
+    stats = [metric(np.concatenate([members[c] for c in rng.choice(uniq, len(uniq))]))
+             for _ in range(n_boot)]
+    lo, hi = np.percentile(stats, [100 * alpha / 2, 100 * (1 - alpha / 2)])
+    return float(lo), float(hi)
+
+
 def wilson_ci(k: int, n: int, z: float = 1.96):
+    """Only valid for independent rows. For clustered data use cluster_bootstrap_ci."""
     p = k / n
     denom = 1 + z**2 / n
     centre = (p + z**2 / (2 * n)) / denom

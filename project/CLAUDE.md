@@ -19,9 +19,17 @@ Every probe/classifier result ships with:
 1. `shuffled_label_control` (group-aware shuffle)
 2. `surface_baselines` (length, keyword, domain)
 3. `stratified_score` on the strongest surface baseline
+4. `cluster_bootstrap_ci` whenever rows share a fact/prompt/seed (never a row-level CI)
+
+## When to use the loop (proportionality)
+- Use CLAIM.md + `/audit` only for a **consequential** result: one that changes a
+  claim in the paper, the next experiment, or a substantial implementation.
+  Not for exploratory plots, refactors, or cosmetic edits.
+- Start with one consequential result per team per week; keep the habit only if it
+  saves more rework than it costs.
 
 ## Review
-- Before a result goes into a draft, slides, or a supervisor message, run `/audit`.
+- Before a consequential result goes into a draft, slides, or a supervisor message, run `/audit`.
   It launches `experiment-auditor` in a fresh context that has NOT seen this
   conversation. Do not paste your reasoning into it; it gets the repo and CLAIM.md only.
 - Do not "fix" audit findings silently. Record each finding and the response in

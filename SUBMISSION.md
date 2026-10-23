@@ -9,7 +9,7 @@ subtitle: "Varad Vishwarupe · 23 October 2026"
 
 **Why this, for this cohort:** these fellows already get speed from AI. Their stated gap is the absence of systematic practices and of a calibrated sense of where AI "quietly leads them astray". In a 13-week, publish-or-not programme, the most expensive way AI leads you astray is a headline number that is wrong for a reason nobody checked. I built the demo, then **tested my own pitch**. A fresh Claude caught all four planted bugs when asked. So the uplift is *not* "AI writes buggy code, check it". The uplift is turning an optional, improvised, forgettable check into a habit that leaves evidence behind. That finding reshaped the workshop (Part 2). Then I ran the auditor on *my own corrected* write-up, and it caught three errors in it. That's the workshop's closing slide.
 
-**Worked example:** [GitHub repo link: *paste after upload*] · key files and outputs are reproduced below, so this doc stands alone.
+**Worked example:** <https://github.com/varad-vishwarupe/truth-probe-audit> · key files and outputs are reproduced below, so this doc stands alone.
 
 ---
 
@@ -39,7 +39,7 @@ Fellows leave with a drop-in kit for their own repo: `CLAIM.md` template, `exper
 
 ## The worked example
 
-**Repo:** [paste link] · Run `python3 naive_probe.py`, `python3 honest_probe.py`, then `/audit` inside `project/` in Claude Code.
+**Repo:** <https://github.com/varad-vishwarupe/truth-probe-audit> · Run `python3 naive_probe.py`, `python3 honest_probe.py`, then `/audit` inside `project/` in Claude Code.
 
 **What you're looking at (orientation).** A plausible LASR-style experiment: a linear probe across 16 layers to detect whether a statement is true. One fluent Claude Code session produced **99.2% at layer 8**. The activations come from a *simulated model with planted ground truth*, so we can score every review method objectively:
 

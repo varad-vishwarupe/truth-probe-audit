@@ -1,7 +1,7 @@
 # truth-probe-audit: worked example for the LASR workshop
 ### "Don't let the author grade the exam: a claim → controls → fresh-context audit loop for AI-written experiments"
 
-**What this is.** The live demo for a 30-minute workshop. A plausible AI-safety
+**What this is.** The live demo for a 30-minute workshop (full write-up: `SUBMISSION.md`). A plausible AI-safety
 experiment (a linear "truth probe" across layers) written in one fluent Claude
 Code session reports **99.2% at layer 8**. The repo contains the reusable kit that
 turns "looks great, ship it" into a 15-minute routine, plus the real outputs of
@@ -34,6 +34,11 @@ _instructor/                     ground-truth generator: do NOT give to the audi
 HANDOUT.md                       one-page take-away + install instructions
 ```
 
+## When to use it
+Only for **consequential** results (ones that change a paper claim, the next experiment or a
+substantial implementation). Start with one per team per week; keep it only if it saves more
+rework than it costs. The auditor is a fresh-context checker, not an authority: re-run its key numbers.
+
 ## Reproduce
 ```bash
 cd _instructor && python3 make_activations.py      # regenerates project/data/*
@@ -42,16 +47,18 @@ python3 honest_probe.py                            # → 0.819 nested grouped; c
 # in Claude Code, inside project/:   /audit naive_probe.py
 ```
 
-## Headline numbers (from `results/honest_results.json`)
-| | accuracy |
+## Headline numbers (printed by `honest_probe.py`; CIs resample whole facts)
+| | value |
 |---|---|
 | Naive: random row split, best of 16 layers picked on test | **0.992** |
 | Shuffled labels (statement-level), *same naive split* | 0.70 ← should be 0.50 |
 | Test rows that are paraphrases of a training statement | 98% |
-| Nested grouped CV (split by fact, layer/C chosen on inner folds) | **0.819** (fact-clustered 95% CI 0.78–0.86) |
+| Accuracy, nested grouped CV (split by fact, layer/C chosen on inner folds; layer 8 in 4/5 folds) | **0.819** (fact-clustered 95% CI 0.78–0.86) |
 | Baseline: "does the sentence contain *not*?" | 0.763 |
-| Probe accuracy *within* negation strata (balanced, nested) | **0.685** (CI 0.63–0.74) |
+| **Balanced** accuracy *within* negation strata (nested) | **0.685** (CI 0.63–0.74) |
 
-Read: there *is* a mid-layer truth signal, but it's 0.68 once you remove the
-shortcut, not 0.99. (CIs and wording corrected after the calibration audit in `runs/D_calibration_AUDIT.md`,
-which caught errors in the instructor's own first write-up.) That's the sentence that should go in the paper.
+Read: the planted mid-layer signal is real but modest: accuracy 0.82 on held-out facts (vs a
+0.76 "contains not" baseline) and balanced accuracy 0.68 within negation strata, not 0.99.
+Because the data is synthetic, this demonstrates the workflow, not a finding about a real model.
+(CIs and wording were corrected after the calibration audit in `runs/D_calibration_AUDIT.md`,
+which caught errors in the first write-up.)

@@ -1,52 +1,45 @@
 # One page: "Don't let the author grade the exam"
 
-**The habit:** before any AI-assisted result leaves your laptop (draft, figure,
-Slack to your supervisor), run the 3-step loop. Budget: ~15 minutes of your time,
-the rest is Claude's.
+**The practice:** before you trust a *consequential* AI-assisted result (one that
+changes a paper claim, your next experiment, or a substantial implementation),
+write down what it must generalise to and what would weaken it. Then let a
+fresh-context assistant run that check and leave the evidence in the repo.
 
-## 1. Pre-register: `CLAIM.md` (5 min, you, by hand)
+**When NOT to use it:** exploratory plots, refactors, cosmetic edits. Start with one
+consequential result per team per week; keep it only if it saves more rework than it costs.
+
+## 1. You: `CLAIM.md` (before AI touches the result)
 - The sentence as it would appear in the paper.
-- **The unit of generalisation.** New facts? New prompts? New models? New seeds?
-- 3–5 falsifiers: "if X, the claim is wrong/weaker".
-- The numbers you expect if the claim is true: shuffled-label score, gap
-  between headline and grouped split, best trivial baseline.
-- The one-line objection your harshest reviewer will raise.
+- **The unit of generalisation:** new facts? new prompts? new models? new seeds?
+- 2-3 falsifiers ("if X, the claim is weaker") and the number you expect for each.
 
-## 2. Controls ship with the number (Claude writes, `verify.py` standardises)
+## 2. AI: run the two controls that catch most of it
 | Control | Catches | Red flag |
 |---|---|---|
-| Group-aware shuffled labels, **same split** | leakage, memorisation | ≫ chance |
-| Group overlap report | near-duplicates across split | > 0 |
-| Trivial-feature baselines | shortcuts (length, keyword, template) | close to headline |
-| Stratified score on strongest shortcut | probe reading the shortcut | ≈ 0.5 |
-| Validation-only selection | optimistic headline | layer/HP picked on test |
+| Split by the unit of generalisation (`grouped_cv_score`) | near-duplicates, memorisation | big drop vs. your headline |
+| Group-aware shuffled labels on the **same split** (`shuffled_label_control`) | leakage the split hides | well above chance |
 
-## 3. Fresh-context audit: `/audit` (Claude, ~5–10 min wall-clock)
-- A **subagent that never saw the conversation** that wrote the code.
-- Gets: repo + `CLAIM.md`. Does *not* get: your reasoning, Claude's summary.
-- Must **run** checks and cite numbers; may not edit source.
-- You read the verdict + table and decide what to act on. Log it.
+Also in `verify.py` when relevant: surface-feature baselines, stratified score on the
+strongest shortcut, `cluster_bootstrap_ci` (never a row-level CI on clustered rows).
 
-## Why not just ask Claude "does this look right?"
-Same model, same chat → it shares the author's framing and assumptions, it's
-prompted to be helpful about *your* result, and it reviews by reading rather than
-measuring. In our demo the ad-hoc review and the audit had the same model, same
-tools, same code. The difference was entirely the workflow. (See the doc for what each found.)
+## 3. AI: `/audit` in a fresh context, then you decide
+- A subagent that never saw the authoring conversation; gets repo + `CLAIM.md` only.
+- Must **run** checks, cite numbers, list what passed, and report only problems that
+  would change the claim. It may share your assistant's blind spots: re-run its key numbers.
+- You write the verdict line and decide what to act on:
+  `Claim weakened: <reason>; next action: <experiment>; needs: <who/what>`
 
-## Install in your repo (2 min)
+## Install (2 min)
 ```bash
-cp -r .claude/agents/experiment-auditor.md  <your-repo>/.claude/agents/
-cp -r .claude/commands/audit.md             <your-repo>/.claude/commands/
-cp verify.py CLAIM.md                        <your-repo>/
-# then: edit CLAIM.md for YOUR result, and in Claude Code run:  /audit path/to/script.py
+cp .claude/agents/experiment-auditor.md  <your-repo>/.claude/agents/
+cp .claude/commands/audit.md             <your-repo>/.claude/commands/
+cp verify.py CLAIM.md                    <your-repo>/
+# edit CLAIM.md for YOUR result, then in Claude Code:  /audit path/to/script.py
 ```
 
-## Adapting the checklist to your project type
-- **Evals / benchmarks:** unit = held-out task family; controls = answer-only
-  baselines, contamination check, grader agreement with humans on 20 items.
-- **Steering / interventions:** controls = random direction of same norm,
-  off-target capability drop, effect vs. prompt-only baseline.
-- **Model organisms / sandbagging / control:** controls = does the "detector"
-  fire on the un-modified model? Is the red-team policy tuned on the test set?
-- **LLM-as-judge results:** judge ≠ policy model family; position/length bias
-  checks; 30 hand labels to calibrate.
+## Falsifiers by project type (LASR areas)
+- **Probes / interpretability:** keyword or bag-of-words baseline; within-stratum score; random-direction control.
+- **Evals / benchmarks:** answer-only baseline; contamination check; 20 hand-graded items vs the grader.
+- **Control / monitoring:** does the monitor fire on the unmodified model? Is the red-team policy tuned on the test set?
+- **Steering:** random direction of equal norm; off-target capability drop; prompt-only baseline.
+- **LLM-as-judge:** judge from a different model family; position and length bias checks.

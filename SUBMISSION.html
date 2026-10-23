@@ -1,86 +1,85 @@
-<h1>LASR Labs Research Coordinator/Manager: Work Test, Submission</h1><p><b>Varad Vishwarupe</b> · 23 October 2026</p>
+<h1>LASR Labs Research Manager / Coordinator: Work Test</h1>
+<p><strong>Varad Vishwarupe</strong>, Department of Computer Science and Institute for Ethics in AI, University of Oxford · 23 October 2026</p>
+<p><strong>Repo (worked example, runnable):</strong> <a href="https://github.com/varad-vishwarupe/truth-probe-audit" class="uri">https://github.com/varad-vishwarupe/truth-probe-audit</a></p>
 <h1 id="tldr">TL;DR</h1>
-<p><strong>What I’d teach:</strong> <em>Don’t let the author grade the exam.</em> Before an AI-assisted result leaves your laptop (draft, figure, Slack to your supervisor), run a 15-minute loop. First, <strong>pre-register the claim</strong> by hand: the unit of generalisation, plus falsifiers. Second, <strong>ship the standard controls with the number</strong>. Third, have a <strong>fresh-context auditor agent</strong> try to break it, with measured evidence, logged in the repo.</p>
-<p><strong>Why this, for this cohort:</strong> these fellows already get speed from AI. Their stated gap is the absence of systematic practices and of a calibrated sense of where AI “quietly leads them astray”. In a 13-week, publish-or-not programme, the most expensive way AI leads you astray is a headline number that is wrong for a reason nobody checked. I built the demo, then <strong>tested my own pitch</strong>. A fresh Claude caught all four planted bugs when asked. So the uplift is <em>not</em> “AI writes buggy code, check it”. The uplift is turning an optional, improvised, forgettable check into a habit that leaves evidence behind. That finding reshaped the workshop (Part 2). Then I ran the auditor on <em>my own corrected</em> write-up, and it caught three errors in it. That’s the workshop’s closing slide.</p>
-<p><strong>Worked example:</strong> <a href="https://github.com/varad-vishwarupe/truth-probe-audit" class="uri">https://github.com/varad-vishwarupe/truth-probe-audit</a> · key files and outputs are reproduced below, so this doc stands alone.</p>
-<hr />
+<p><strong>The one practice I would teach:</strong> <em>don’t let the author grade the exam.</em> Before trusting a consequential AI-assisted result, the researcher writes down what it must generalise to and what would weaken it; a fresh-context assistant then runs that check and leaves the evidence in the repo. The researcher keeps the judgment; the assistant does the mechanical verification.</p>
+<p><strong>Why it fits this cohort:</strong> these fellows are already fast with AI. What they lack, per the brief, is a repeatable practice and a calibrated sense of where AI quietly leads them astray. In a 13-week proposal-to-publication programme, the costliest way that happens is a headline number that is wrong for a reason nobody checked.</p>
+<p><strong>What makes this submission different:</strong> I did not just assert the pitch; I tested it. On a LASR-style probing experiment with planted ground truth, a fresh Claude found the textbook bugs when asked (in this example), so the uplift is not “AI writes buggy code”. The uplift is making the check <em>happen</em>, <em>run</em> and <em>leave evidence</em>. Then the same auditor, run on our own corrected write-up, caught three errors in it, and a second model (GPT) critiqued the whole submission. Every number below was re-run after those corrections.</p>
 <h1 id="part-1-the-workshop">Part 1: The workshop</h1>
 <h2 id="the-one-thing">The one thing</h2>
 <blockquote>
-<p><strong>A result is not a result until something other than its author has tried to break it, against falsifiers you wrote down before you looked.</strong></p>
+<p><strong>A result is not a result until something other than its author has tried to break it, against a claim you wrote down before you looked.</strong></p>
 </blockquote>
-<p>Fellows leave with a drop-in kit for their own repo: <code>CLAIM.md</code> template, <code>experiment-auditor</code> subagent, <code>/audit</code> slash command, <code>verify.py</code> controls, a <code>CLAUDE.md</code> results-discipline block, and a one-page checklist. They also leave with one commitment. Every result shown at a team or supervisor meeting from then on carries its audit verdict line.</p>
-<h2 id="session-plan-30-min-20-fellows-laptops-open">Session plan (30 min, ~20 fellows, laptops open)</h2>
+<p>Fellows leave with: a <code>CLAIM.md</code> for one real result of their own, a discriminating check, a verdict line, and a drop-in kit (<code>/audit</code> command, auditor subagent, <code>verify.py</code> controls). The kit is for <em>consequential</em> results only, one per team per week to start, and it is kept only if it saves more rework than it costs. Arcadia’s own scaffold post found that added machinery killed adoption, so proportionality is part of the lesson, not an afterthought.</p>
+<h2 id="session-plan-30-min-about-20-fellows-in-research-team-pairs-laptops-open">Session plan (30 min, about 20 fellows in research-team pairs, laptops open)</h2>
 <table>
 <colgroup>
-<col style="width: 8%" />
-<col style="width: 14%" />
-<col style="width: 57%" />
 <col style="width: 20%" />
+<col style="width: 41%" />
+<col style="width: 37%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Time</th>
-<th>Segment</th>
-<th>What happens</th>
-<th>Why</th>
+<th>Min</th>
+<th>Activity</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>0:00–0:03</td>
-<td><strong>Cold open: “Would you put this in your paper?”</strong></td>
-<td>Show the 99.2% truth-probe plot and the confident summary. Hands up: ship / don’t ship / not sure.</td>
-<td>Commit them to a judgment before the reveal; most will say “ship” or “not sure”.</td>
+<td>0-3</td>
+<td>Show the 99.2% truth-probe result. Each fellow <strong>privately</strong> records ship / don’t ship / insufficient evidence, plus the one missing fact they most want.</td>
+<td>Commit to a judgment before the reveal.</td>
 </tr>
 <tr class="even">
-<td>0:03–0:07</td>
-<td><strong>Why ad hoc checking fails</strong></td>
-<td>Show the 3-condition scorecard (below). The point is that the model <em>can</em> find these bugs. The checks didn’t <em>happen</em>, weren’t <em>run</em>, or left <em>nothing behind</em>. Two numbers: Perry et al., where AI-assisted users wrote less secure code and were <em>more</em> confident in it; and METR, where devs believed AI sped them up ~20% while measured ~19% slower (since updated; I use it for the perception gap only).</td>
-<td>Reframe from “AI is buggy” (which they half-believe and partly outgrew) to “your process has no checker”.</td>
+<td>3-7</td>
+<td><strong>Before any AI:</strong> fellows write the unit of generalisation (“new facts, not new phrasings”) and predict one falsifying check and its expected number.</td>
+<td>The human contribution: the part models are weakest at (Arcadia’s scaffold finding).</td>
 </tr>
 <tr class="odd">
-<td>0:07–0:19</td>
-<td><strong>Live demo</strong> (the worked example)</td>
-<td>(1) Write <code>CLAIM.md</code> live, 3 min, <em>by hand</em>; the key move is naming the unit of generalisation (“new facts, not new phrasings”). (2) <code>/audit</code> in a fresh context; while it runs (~2–3 min) walk through <code>verify.py</code> and the auditor’s checklist. (3) Read the verdict + findings table aloud; show the null control (0.71 vs 0.49). (4) Show <code>before_after.png</code> and the corrected paper sentence: <strong>0.99 → 0.82 → 0.68 within negation strata</strong>. (5) Twist: show that the auditor, run on <em>my corrected</em> write-up, caught two errors in it.</td>
-<td>They watch the whole loop, including the human’s 3-minute contribution, which is the part that requires judgment.</td>
+<td>7-17</td>
+<td><strong>Live <code>/audit</code></strong> in a fresh context. Focus on two controls only: the grouped split and the group-aware shuffled-label null (0.70 under the naive split vs 0.49 grouped). All other controls stay in the repo for later.</td>
+<td>Watch the assistant do the mechanical work against <em>their</em> falsifiers.</td>
 </tr>
 <tr class="even">
-<td>0:19–0:27</td>
-<td><strong>Hands-on, in research-team pairs</strong></td>
-<td>Each fellow writes a <code>CLAIM.md</code> for <em>their own</em> project’s current or planned headline result: claim sentence, unit of generalisation, 3 falsifiers, expected null. Partner plays the hostile reviewer for 2 min. Fellows with a result already run <code>/audit</code> on it.</td>
-<td>Transfer happens on their own project, not on my toy.</td>
+<td>17-25</td>
+<td>Pairs apply the same practice to <strong>one real claim from their own project</strong>: one writes <code>CLAIM.md</code>, the other uses AI to run or specify the cheapest discriminating check. Swap who explains.</td>
+<td>Transfer on their own research, not my toy.</td>
 </tr>
 <tr class="odd">
-<td>0:27–0:30</td>
-<td><strong>Close + commitment</strong></td>
-<td>Install line on screen. Ask: from next week, every result in stand-up/supervisor meetings comes with its audit verdict line. Offer 1:1 slots to adapt the checklist (evals / control / steering / SAE variants are in the handout).</td>
-<td>Converts a workshop into a team norm I can follow up on as coordinator.</td>
+<td>25-28</td>
+<td>The corrected result and what remains unsupported. The twist: the auditor, run on my corrected write-up, caught three errors in it. Calibration applies to the checker too.</td>
+<td>Lands the “fresh-context checker, not authority” point.</td>
+</tr>
+<tr class="even">
+<td>28-30</td>
+<td>Individual <strong>transfer answer</strong> on a new case (“an AI summary says a monitor generalises to a new model family; what is the cheapest observation that would change your view?”).</td>
+<td>Measure transfer, not satisfaction.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Load-bearing assumptions.</strong></p>
+<p><strong>Load-bearing assumptions:</strong></p>
 <ul>
-<li>Delivered in <strong>week 2–3</strong>, when teams have first results but haven’t written them up. The Winter 2026 retrospective advises a workshop-style draft by then.</li>
-<li>Fellows run Claude Code with subagents and slash commands.</li>
-<li>I send the kit repo a day ahead so install takes 2 minutes.</li>
-<li>Supervisors agree to ask for the verdict line. Without that last one, the habit decays.</li>
+<li>Run in week 2 or 3, when teams have first results but haven’t written them up.</li>
+<li>Fellows use Claude Code (as the brief says).</li>
+<li>The kit is shared a day ahead, so install is 2 minutes.</li>
+<li>Supervisors agree to treat verdict lines as discussion prompts.</li>
+<li>If live generation fails, I replay the captured run in <code>runs/</code>.</li>
 </ul>
 <h2 id="the-worked-example">The worked example</h2>
-<p><strong>Repo:</strong> <a href="https://github.com/varad-vishwarupe/truth-probe-audit" class="uri">https://github.com/varad-vishwarupe/truth-probe-audit</a> · Run <code>python3 naive_probe.py</code>, <code>python3 honest_probe.py</code>, then <code>/audit</code> inside <code>project/</code> in Claude Code.</p>
-<p><strong>What you’re looking at (orientation).</strong> A plausible LASR-style experiment: a linear probe across 16 layers to detect whether a statement is true. One fluent Claude Code session produced <strong>99.2% at layer 8</strong>. The activations come from a <em>simulated model with planted ground truth</em>, so we can score every review method objectively:</p>
+<p><strong>Repo:</strong> <a href="https://github.com/varad-vishwarupe/truth-probe-audit" class="uri">https://github.com/varad-vishwarupe/truth-probe-audit</a></p>
+<p><strong>Orientation.</strong> A linear probe across 16 layers to detect whether a statement is true: the kind of experiment LASR fellows run. A fluent Claude Code session produced <strong>99.2% accuracy at layer 8</strong>. The activations come from a <em>simulated</em> model with planted ground truth, so every review method can be scored objectively:</p>
 <ul>
-<li>a genuine but modest mid-layer truth direction;</li>
-<li>a negation shortcut (80% of “not” statements are false);</li>
-<li>paraphrase leakage (4 paraphrases per statement);</li>
-<li>the best layer picked on the test set.</li>
+<li>a modest mid-layer truth direction;</li>
+<li>a negation shortcut, where 80% of “not” statements are false;</li>
+<li>paraphrase leakage across the split;</li>
+<li>the best layer chosen on the test set.</li>
 </ul>
-<p>The negation confound is chosen deliberately. It is the exact failure that <em>Still No Lie Detector</em> (Levinstein &amp; Herrmann) and <em>Geometry of Truth</em> (Marks &amp; Tegmark) document for real truth probes. It is also the keyword-shortcut problem LASR’s own NeurIPS 2025 paper <em>Detecting High-Stakes Interactions with Activation Probes</em> controlled for with a bag-of-words baseline. The demo is about this cohort’s actual research, not a generic coding bug.</p>
+<p>The negation confound is the failure documented for real truth probes (Levinstein &amp; Herrmann; Marks &amp; Tegmark). Keyword shortcuts are also what LASR’s own NeurIPS 2025 paper on high-stakes probes controlled for with a bag-of-words baseline.</p>
 <figure>
-<img src="https://raw.githubusercontent.com/varad-vishwarupe/truth-probe-audit/main/project/results/before_after.png" alt="Same activations, same probe: the headline depends on the checks" />
-<figcaption aria-hidden="true">Same activations, same probe: the headline depends on the checks</figcaption>
+<img src="https://raw.githubusercontent.com/varad-vishwarupe/truth-probe-audit/main/project/results/before_after.png" alt="Same activations, same probe: what the headline means depends on the checks" />
+<figcaption aria-hidden="true">Same activations, same probe: what the headline means depends on the checks</figcaption>
 </figure>
-<h3 id="the-result-before-and-after-the-loop-all-numbers-produced-by-the-repo">The result before and after the loop (all numbers produced by the repo)</h3>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -88,54 +87,68 @@
 </colgroup>
 <thead>
 <tr class="header">
-<th></th>
-<th>accuracy</th>
+<th>Metric (all produced by <code>honest_probe.py</code>; CIs resample whole facts)</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Naive: random row split, best of 16 layers chosen on test</td>
+<td><strong>Accuracy</strong>, naive random row split, best of 16 layers chosen on test</td>
 <td><strong>0.992</strong></td>
 </tr>
 <tr class="even">
-<td>Shuffled labels (statement-level) under the <em>same</em> naive split</td>
-<td><strong>0.70</strong> (should be 0.50)</td>
+<td>Accuracy, shuffled labels under the <em>same</em> naive split (should be ~0.50)</td>
+<td><strong>0.70</strong></td>
 </tr>
 <tr class="odd">
 <td>Test rows that are paraphrases of a training statement</td>
 <td>98%</td>
 </tr>
 <tr class="even">
-<td>Nested fact-grouped CV (layer + C chosen on inner folds only)</td>
-<td><strong>0.82</strong> (fact-clustered 95% CI 0.78–0.86)</td>
+<td><strong>Accuracy</strong>, nested fact-grouped CV (layer + C chosen on inner folds; layer 8 in 4/5 folds, 9 in 1)</td>
+<td><strong>0.82</strong> [0.78, 0.86]</td>
 </tr>
 <tr class="odd">
-<td>Baseline: “does the sentence contain <em>not</em>?”</td>
-<td>0.763</td>
+<td>Accuracy, “does the sentence contain <em>not</em>?” baseline</td>
+<td>0.76</td>
 </tr>
 <tr class="even">
-<td>Probe accuracy <em>within</em> negation strata (balanced, nested)</td>
-<td><strong>0.68</strong> (95% CI 0.63–0.74)</td>
+<td>Accuracy, shuffled-label null under the grouped split</td>
+<td>0.49</td>
+</tr>
+<tr class="odd">
+<td><strong>Balanced accuracy <em>within</em> negation strata</strong> (nested)</td>
+<td><strong>0.68</strong> [0.63, 0.74]</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Corrected paper sentence (post-audit):</strong> “On held-out facts a mid-layer linear probe reaches 82% [78–86%] vs. a negation-only baseline of 76% and a shuffled-label null of 50%. Within negation strata, balanced accuracy is 0.68 [0.63–0.74]: a modest truth signal beyond the negation shortcut, peaking at layers 7–11, weak (~0.55) in layers 12–14 and absent at layers 0–4 and 15, on templated statements in three domains.”</p>
-<p>That is a real, publishable finding. It is just not the one the 99% would have claimed.</p>
-<h3 id="the-kit-what-fellows-copy-into-their-repo">The kit (what fellows copy into their repo)</h3>
+<p><strong>What a paper could say if these were real activations:</strong> “On held-out facts a mid-layer linear probe reaches 82% accuracy [78, 86] against a negation-only baseline of 76% and a shuffled-label null of 49%. Within negation strata its balanced accuracy is 0.68 [0.63, 0.74]: a modest signal beyond the negation shortcut, peaking at layers 7-11.” Because the data is synthetic, this demonstrates the workflow; it is not an empirical finding about a real model.</p>
+<h3 id="the-kit-drop-in-for-consequential-results-only">The kit (drop-in, for consequential results only)</h3>
 <ul>
-<li><strong><code>CLAIM.md</code></strong> (5 min, by hand): claim sentence · unit of generalisation · falsifier table (F1 null control ≫ chance; F2 drop under group split; F3 trivial feature nearly as good; F4 within-stratum ≈ 0.5; F5 selection on test) · expected numbers if true · the hostile reviewer’s one-liner.</li>
-<li><strong><code>.claude/agents/experiment-auditor.md</code></strong>: a subagent that never sees the authoring conversation. Rules: trust no prose (docstrings, summaries); every finding needs evidence it generated (command → number) or is labelled UNTESTED; may not edit source; must be calibrated (Critical / Major / Minor). Checklist A–G: unit of generalisation, preprocessing leakage, selection on test, null controls, shortcuts and stratified scores, statistics, claim–evidence wording gap. Output: verdict line, ranked findings table, corrected estimate, <em>what I could not check</em>, exact reproduce commands.</li>
-<li><strong><code>.claude/commands/audit.md</code></strong>: <code>/audit</code> launches the auditor and passes it <em>only</em> the repo and <code>CLAIM.md</code>, never the conversation’s reasoning. It shows the verdict verbatim, does <strong>not</strong> auto-fix, and appends to <code>results/LOG.md</code>.</li>
-<li><strong><code>verify.py</code></strong>: boring, reusable controls: group-aware shuffled-label control, group-overlap report, surface-feature baselines, stratified score, Wilson CI. The group-aware shuffle is the non-obvious one. A row-level shuffle destroys the very structure that causes leakage, so the control passes when it should fail.</li>
-<li><strong><code>CLAUDE.md</code> block</strong>: no “strong/significant” in summaries; selection only on validation; split by the coarsest id the claim generalises across; standard controls ship with every number; <code>/audit</code> before anything leaves the laptop.</li>
+<li><strong><code>CLAIM.md</code></strong> (written by the human): claim sentence · unit of generalisation · 2-3 falsifiers with expected numbers · the hostile reviewer’s one-liner.</li>
+<li><strong><code>.claude/agents/experiment-auditor.md</code></strong>: a fresh-context subagent.
+<ul>
+<li>It trusts no prose, and every finding must cite a number it generated.</li>
+<li>It may not edit source.</li>
+<li>It reports only problems that would change the claim, and lists the checks that passed. This follows Anthropic’s own warning that adversarial reviewers find gaps even in sound work.</li>
+<li>It states that it is a checker, not an authority, and can be run on a different model family.</li>
+</ul></li>
+<li><strong><code>.claude/commands/audit.md</code></strong>: <code>/audit</code> passes only the repo and <code>CLAIM.md</code>, never the authoring conversation. It doesn’t auto-fix. It writes a verdict line to <code>results/LOG.md</code>.</li>
+<li><strong><code>verify.py</code></strong>:
+<ul>
+<li>group-aware shuffled-label control (a row-level shuffle hides the very leakage it should expose);</li>
+<li>grouped CV and an overlap report;</li>
+<li>surface baselines and a stratified score;</li>
+<li><code>cluster_bootstrap_ci</code>.</li>
+</ul></li>
 </ul>
 <figure>
-<img src="https://raw.githubusercontent.com/varad-vishwarupe/truth-probe-audit/main/screens/experiment-auditor-1.png" alt="Screenshot: the auditor subagent definition (.claude/agents/experiment-auditor.md)" />
-<figcaption aria-hidden="true">Screenshot: the auditor subagent definition (<code>.claude/agents/experiment-auditor.md</code>)</figcaption>
+<img src="https://raw.githubusercontent.com/varad-vishwarupe/truth-probe-audit/main/screens/experiment-auditor-1.png" alt="Screenshot: the auditor subagent definition" />
+<figcaption aria-hidden="true">Screenshot: the auditor subagent definition</figcaption>
 </figure>
-<h3 id="real-audit-output-excerpt-of-resultsaudit.md-unedited">Real audit output (excerpt of <code>results/AUDIT.md</code>, unedited)</h3>
+<h3 id="real-audit-output-excerpt-of-resultsaudit.md-verbatim-apart-from-dash-punctuation">Real audit output (excerpt of <code>results/AUDIT.md</code>, verbatim apart from dash punctuation)</h3>
 <blockquote>
-<p><strong>Verdict: DOES NOT SURVIVE as stated.</strong> The 99% comes from a row-level split that puts every test fact in training. With facts held out the probe scores 0.82 [0.80, 0.84], and a single “has negation” feature gets 0.76. Falsifiers F1, F2 and F3 all trigger; F4 partly; F5 triggers on the method, though the layer choice itself holds up.</p>
+<p><strong>Verdict: DOES NOT SURVIVE, as stated.</strong> The 99% comes from a row-level split that puts every test fact in training. With facts held out the probe scores 0.82, and a single “has negation” feature gets 0.76. Falsifiers F1, F2 and F3 all trigger.</p>
 </blockquote>
 <table>
 <colgroup>
@@ -149,7 +162,7 @@
 <th>#</th>
 <th>Sev.</th>
 <th>Finding</th>
-<th>Evidence</th>
+<th>Evidence the auditor generated</th>
 </tr>
 </thead>
 <tbody>
@@ -169,35 +182,34 @@
 <td>3</td>
 <td>Critical</td>
 <td>Negation shortcut</td>
-<td>has_negation baseline 0.763; negation decodable at 0.994 at L8</td>
+<td>has_negation baseline 0.763; negation decodable at 0.994 at layer 8</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>Major</td>
-<td>Signal beyond negation weak, transfers poorly</td>
-<td>neg→aff transfer 0.52; within-strata 0.75</td>
+<td>Signal beyond negation is weak and transfers poorly</td>
+<td>negated→affirmative transfer 0.52</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td>Major</td>
 <td>Layer chosen on test</td>
-<td>nested CV picks L8 5/5 folds, so it costs ~0 here</td>
+<td>nested CV still picks layer 8, so it costs ~0 here</td>
 </tr>
 <tr class="even">
-<td>6–8</td>
+<td>6-8</td>
 <td>Minor</td>
-<td>Scaler leak (1 item); seed range 0.958–0.992; claim wording</td>
-<td>leave-one-domain-out 0.77–0.82</td>
+<td>Scaler leak (1 item); seed range 0.958-0.992; claim wording</td>
+<td>leave-one-domain-out 0.77-0.82</td>
 </tr>
 </tbody>
 </table>
-<p><em>Could not check:</em> the token position and extraction pipeline (only the <code>.npz</code> was given), a familiarity confound, the C sweep. I ran that last one myself: within-strata accuracy runs 0.69 (C=0.003) to 0.75 (C=1), and in my first draft I reported that range. The calibration audit (below) correctly called that test-fold selection.</p>
 <figure>
 <img src="https://raw.githubusercontent.com/varad-vishwarupe/truth-probe-audit/main/screens/C_workflow_AUDIT-1.png" alt="Screenshot: the real results/AUDIT.md produced by /audit in a fresh context" />
-<figcaption aria-hidden="true">Screenshot: the real <code>results/AUDIT.md</code> produced by <code>/audit</code> in a fresh context</figcaption>
+<figcaption aria-hidden="true">Screenshot: the real results/AUDIT.md produced by /audit in a fresh context</figcaption>
 </figure>
-<h3 id="testing-my-own-pitch-three-ways-of-checking-the-same-result">Testing my own pitch: three ways of checking the same result</h3>
-<p>Same model, same tools, same data, n = 1 each (illustrative, not an experiment). Scored against the planted ground truth (full table in <code>runs/SCORECARD.md</code>).</p>
+<h3 id="testing-the-pitch-three-ways-of-checking-the-same-result">Testing the pitch: three ways of checking the same result</h3>
+<p>These runs used the same model, the same tools and the same data. <strong>n = 1 per condition, so this is an illustration, not a study.</strong> Each review style is scored against the planted ground truth; the full table is in <code>runs/SCORECARD.md</code>.</p>
 <table>
 <colgroup>
 <col style="width: 25%" />
@@ -210,69 +222,80 @@
 <th></th>
 <th>A. Author session (“quick, is there a truth direction?”)</th>
 <th>B. Fresh ad hoc review (“look at this before I write it up?”)</th>
-<th>C. Workflow (<code>CLAIM.md</code> + <code>/audit</code>)</th>
+<th>C. <code>CLAIM.md</code> + <code>/audit</code></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Leakage (P1)</td>
+<td>Leakage</td>
 <td>avoided unprompted</td>
 <td>found</td>
 <td>found + measured</td>
 </tr>
 <tr class="even">
-<td>Negation confound (P2)</td>
+<td>Negation shortcut</td>
 <td>found</td>
 <td>found</td>
 <td>found + polarity transfer</td>
 </tr>
 <tr class="odd">
-<td>Test-set selection (P3)</td>
+<td>Layer chosen on test</td>
 <td><strong>committed it</strong> (86.2% = best of 16 on one split)</td>
 <td>found</td>
-<td>found + showed cost ≈ 0</td>
+<td>found + cost measured</td>
 </tr>
 <tr class="even">
 <td>Null control actually <em>run</em></td>
 <td>no</td>
 <td>suggested, not run</td>
-<td><strong>run</strong> (0.71 vs 0.49)</td>
+<td><strong>run</strong> (0.70 vs 0.49)</td>
 </tr>
 <tr class="odd">
 <td>Judged against pre-stated falsifiers</td>
-<td>–</td>
-<td>–</td>
-<td><strong>F1–F5 each marked</strong></td>
+<td>no</td>
+<td>no</td>
+<td><strong>yes</strong></td>
 </tr>
 <tr class="even">
 <td>Evidence left in the repo</td>
-<td>partial (key checks were “one-off runs”)</td>
+<td>partial (“one-off runs”)</td>
 <td>script saved <em>outside</em> the repo</td>
-<td>scripts + commands + LOG entry</td>
+<td>scripts + commands + log</td>
 </tr>
 <tr class="odd">
-<td>States what it couldn’t check</td>
+<td>Says what it could not check</td>
 <td>no</td>
 <td>no</td>
 <td><strong>yes</strong></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Calibration check on the auditor</strong> (D): I ran the same auditor on the <em>corrected</em> pipeline with an honest claim, to see whether it invents problems. See <code>runs/D_calibration_AUDIT.md</code>. <strong>Verdict: WEAKENED, and it was right.</strong> It invented nothing; it listed the checks that passed (null 0.50 on the <em>full</em> nested pipeline, a bag-of-words model at 0.47–0.49 within strata, layer 8 vs layer 2 gap 0.25 [0.18, 0.32]). It caught three real errors <strong>in my own first-draft write-up</strong>:</p>
+<p><strong>In this example, ad hoc review identified the planted problems; the structured workflow additionally ran the controls, tested the pre-stated falsifiers and preserved the evidence.</strong> That is the gap the workshop targets.</p>
+<p><strong>The auditor, audited (run D).</strong> I ran the same auditor on the <em>corrected</em> pipeline with an honest claim. It returned <strong>WEAKENED</strong> and invented nothing: it listed the checks that passed, including a full nested shuffled-label null averaging about 0.51 over 3 permutations and a bag-of-words model at 0.47-0.49 within strata. It caught three real errors in the first-draft write-up:</p>
 <ol type="1">
-<li>My “0.69–0.75” within-strata range had its upper end chosen on test folds. The nested number is 0.68.</li>
-<li>My Wilson CI treated 1,200 rows as independent when there are only 150 facts. The fact-clustered CI is 0.78–0.86, not 0.80–0.84.</li>
-<li>My “absent in late layers” overstated things, since layers 12–14 retain ~0.55.</li>
+<li>a within-strata range whose upper end had been chosen on test folds;</li>
+<li>a row-level confidence interval on clustered data;</li>
+<li>“absent in late layers”, when layers 12-14 retain about 0.55.</li>
 </ol>
-<p>I reproduced (1) and (2) independently before accepting them (bootstrap: 0.819 [0.779, 0.859]; 0.685 [0.631, 0.743]). All numbers in this doc are the post-audit ones. <strong>This is the closing slide of the workshop: the person who designed the trap still fell into it, and the loop caught it in four minutes.</strong></p>
-<hr />
+<p>The two quantitative findings were reproduced before being accepted (0.819 [0.779, 0.859]; 0.685 [0.631, 0.743]). Then the pipeline itself was fixed: <code>honest_probe.py</code> now prints the clustered intervals. Calibration applies to the checker as well.</p>
 <h1 id="part-2-why-this-for-this-cohort">Part 2: Why this, for this cohort</h1>
-<p><strong>1. It targets the gap they actually have, not the one they used to have.</strong> The brief describes fellows who are fast and fluent but improvised, without “a considered sense of where AI helps versus where it quietly leads them astray”. My first draft of this workshop assumed the classic pitch: AI writes subtly buggy code, so review it. Running the demo falsified that. Claude, as author, avoided the leaky split unprompted, and a fresh Claude caught every planted bug when asked. For a 2026 cohort the binding constraint is not the model’s ability to spot problems. It is whether a check <em>happens</em>, whether controls are <em>run rather than suggested</em>, whether the result is judged against criteria <em>chosen before the number was seen</em>, and whether anything survives for a co-author or supervisor to re-run. That is a systematicity gap, and that is exactly what the cohort is described as lacking.</p>
-<p><strong>2. It moves human judgment to where it’s irreplaceable.</strong> LASR wants fellows to spend less time on mechanical work and more on what needs judgment. In this loop Claude does the mechanical 90%: controls, audit, reproduction. The human’s 5 minutes go into the one thing no reviewer can do for them: deciding what the result must generalise to and what would embarrass it. “New facts, not new phrasings” is a research decision, not a coding one.</p>
-<p><strong>3. The cost asymmetry in a 13-week programme is extreme.</strong> LASR’s model is proposal-to-publication. About half of a recent cohort’s papers reached NeurIPS, and the retrospective advice is a draft by week 2–3. A leaked or confounded headline found in week 3 costs 15 minutes. Found in week 11, or by a reviewer, it costs the paper, and possibly a public claim about model internals. AI makes this worse as fellows speed up, because more AI-written code means more unverified surface. Kapoor &amp; Narayanan found leakage in 294 papers across 17 fields <em>before</em> coding agents. Sakana’s AI Scientist had 42% of experiments fail on coding errors under independent evaluation. And fluency breeds confidence: Perry et al.’s AI-assisted participants were more likely to believe insecure code was secure, and automation-bias research finds that <em>accountability</em> is one of the few reliable mitigations.</p>
-<p><strong>4. It’s AI-safety-native and transfers across every project type.</strong> LASR’s areas (probes, CoT monitoring, control, evals, SAEs, steganography, scheming) are all claims about held-out generalisation that can be undermined by shortcuts. The same loop applies with different falsifiers. For evals: answer-only baselines and contamination checks. For steering: a random direction of equal norm. For control and model organisms: does the detector fire on the unmodified model? For LLM-as-judge: self-preference (Panickssery et al.) and length bias. It also tracks how agents themselves fail: METR found o3 reward-hacking in 30% of RE-Bench runs, and Anthropic’s own system cards describe Claude special-casing tests. An independent checker is the general mitigation.</p>
-<p><strong>5. It gives a Research Manager something to manage.</strong> The verdict line and <code>LOG.md</code> turn research quality into something visible in stand-ups. That lets me coach teams on specific failure patterns across the cohort, rather than relying on fellows to self-report.</p>
-<p><strong>Considered and rejected</strong></p>
+<p><strong>1. It targets the gap this cohort actually has.</strong> The brief describes fellows who are fluent but improvised. The repeatable step they lack is deciding what a result must generalise to <em>before</em> an AI-written pipeline produces a persuasive number. A fresh model can often find textbook bugs when asked. The failure is that nobody asks, the control is suggested but never run, or the evidence evaporates with the chat.</p>
+<p><strong>2. It puts human judgment exactly where Arcadia’s own evidence says it is needed.</strong> Arcadia’s automated-research-scaffold post found that models were strong at building and running defined experiments but weak at interpreting results and choosing the next question. Told to “do good science”, they also over-emphasised controls on uninteresting questions. This design follows that finding:</p>
+<ul>
+<li>The fellow owns the claim, the unit of generalisation and the interpretation.</li>
+<li>The assistant runs the controls the fellow chose, scoped by <code>CLAIM.md</code> rather than “verify everything”.</li>
+<li>Arcadia’s oversight post warns that checking individual steps does not establish the overall argument. That is why the final step is a human verdict on the <em>claim</em>, not a pass/fail on each check.</li>
+</ul>
+<p><strong>3. The cost asymmetry in a 13-week programme is extreme.</strong> About half of a recent LASR cohort’s papers reached NeurIPS, and the alumni retrospective advises a draft by weeks 2-3. A leaked or confounded headline found in week 3 costs one check; found in week 11, or by a reviewer, it costs the paper.</p>
+<p>The evidence that this risk is real:</p>
+<ul>
+<li>Leakage affected 294 papers across 17 fields before coding agents existed (Kapoor &amp; Narayanan).</li>
+<li>In an independent evaluation of Sakana’s AI Scientist, 42% of experiments failed on coding errors.</li>
+<li>AI-assisted participants were more likely to believe insecure code was secure (Perry et al.).</li>
+<li>Automation-bias research finds accountability among the few reliable mitigations (Goddard et al.).</li>
+</ul>
+<p><strong>4. It transfers across LASR’s research areas.</strong> Probes, CoT monitoring, control, evals, SAEs and steganography all make claims about held-out generalisation that shortcuts can undermine. Only the falsifiers change. For evals: an answer-only baseline. For monitors: does it fire on the unmodified model? For steering: a random direction of equal norm. For LLM judges: a judge from a different model family, since models favour their own outputs (Panickssery et al.).</p>
+<p><strong>5. Considered and rejected.</strong></p>
 <table>
 <colgroup>
 <col style="width: 28%" />
@@ -281,86 +304,236 @@
 <thead>
 <tr class="header">
 <th>Option</th>
-<th>Why not (for <em>this</em> cohort, in 30 min)</th>
+<th>Why not, for this cohort, in 30 minutes</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Systematic paper-reading / literature workflows</td>
-<td>Their strongest existing habit; errors are cheaper and supervisors catch them. Lower marginal uplift.</td>
+<td>Paper-reading / literature workflows</td>
+<td>Their strongest existing habit; errors there are cheaper and supervisors catch them.</td>
 </tr>
 <tr class="even">
-<td>CLAUDE.md / context-engineering / prompt library</td>
-<td>Real but hygiene-level, a 5-minute tip rather than a 30-minute session. I folded the useful part into the kit.</td>
+<td>Claude Code feature tour / prompt library</td>
+<td>Hygiene, not a research practice; the useful part (a <code>CLAUDE.md</code> block) is folded into the kit.</td>
 </tr>
 <tr class="odd">
-<td>Parallel agents, worktrees, background tasks for throughput</td>
-<td>Speeds up a pipeline with no checker, so it <em>accelerates</em> the failure mode. Teach it second, once verification is a habit.</td>
+<td>Parallel agents and multi-agent critics for throughput</td>
+<td>More machinery and more unverified output; Arcadia’s own scaffold found friction outweighed uplift. Teach after verification is a habit.</td>
 </tr>
 <tr class="even">
-<td>Building eval harnesses (e.g. Inspect)</td>
-<td>Valuable but project-specific; better as team-level coaching than a cohort-wide session.</td>
+<td>A broad “verify everything” lesson</td>
+<td>No stopping rule. Proportionality is the point.</td>
 </tr>
 <tr class="odd">
-<td>AI-assisted paper writing</td>
-<td>Real need, wrong timing; a week 9–10 workshop.</td>
-</tr>
-<tr class="even">
-<td>A lecture on “where AI leads you astray”</td>
-<td>Knowledge without an artifact decays by Friday. The session has to leave a habit and a tool behind.</td>
-</tr>
-<tr class="odd">
-<td>A generic “review AI code” session</td>
-<td>My own scorecard shows the model already catches textbook bugs; it would teach them something they half-know.</td>
+<td>A second, simpler worked example (e.g. a monitor-abstention metric)</td>
+<td>GPT drafted one; it was clear but too elementary for this cohort, and two demos would halve the time on transfer.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h1 id="part-3-process">Part 3: Process</h1>
-<p><strong>Tools.</strong> Claude (Opus 5.5) in claude.ai’s agentic workspace: shell, Python, file tools, and subagents running in parallel. One background subagent did web research (LASR/Arcadia, survey and empirical evidence), with every figure verified against its source page and unverifiable items flagged. I left out a few figures that didn’t verify cleanly, such as the exact list of LASR’s NeurIPS 2025 papers.</p>
-<p><strong>Timeline (BST, 23 Oct).</strong></p>
+<h1 id="part-3-how-this-does-the-job-lasr-describes">Part 3: How this does the job LASR describes</h1>
+<p>The Research Manager role combines research management with technical enablement. It covers running workshops on using AI tools to research and code more efficiently, hands-on debugging to unblock teams, tracking progress and reporting to the Programme Manager, and evaluating project proposals. The test is whether an artifact helps capable researchers <strong>make better decisions</strong> while <strong>reducing the mechanical work</strong> needed to support them.</p>
+<p><strong>Better decisions, named.</strong> The demo changes four concrete decisions:</p>
+<ol type="1">
+<li><strong>Don’t ship the 99%.</strong></li>
+<li><strong>Which sentence goes in the paper:</strong> accuracy 0.82 against a 0.76 baseline, with balanced accuracy of 0.68 within strata.</li>
+<li><strong>The next experiment:</strong> a polarity-balanced evaluation.</li>
+<li><strong>What to escalate:</strong> “supervisor input needed on the intended generalisation (new facts vs new domains)”.</li>
+</ol>
+<p>The fourth arrives as a verdict line:</p>
+<p><code>Claim weakened: accuracy 0.82 [0.78, 0.86] vs 'not' baseline 0.76; next action: polarity-balanced evaluation; needs: supervisor input on intended generalisation</code></p>
+<p>A verdict line is a prompt for a stand-up conversation, not a grade. It tells a manager where to look, not which team is “good”.</p>
+<p><strong>Mechanical work moved to the assistant.</strong> The assistant did all of the following:</p>
 <ul>
-<li><strong>10:08</strong> Task in. Read all three parts first (as instructed); decided the deliverable had to be a <em>runnable</em> loop, not slides.</li>
-<li><strong>10:10</strong> Chose the topic and the demo domain. I picked probing because it’s LASR-native and has a known, citable confound (negation), which makes the demo about their research rather than a generic bug.</li>
-<li><strong>10:11</strong> Launched the research subagent in parallel.</li>
-<li><strong>10:11–10:15</strong> Built the simulated activations and <strong>tuned them deliberately</strong> so that every trap has a realistic magnitude. I rejected the first settings: the truth signal was so strong that the controls didn’t matter, and the “affirmative-only accuracy” metric I first used was itself confounded by base rates. I switched to balanced accuracy within strata.</li>
-<li><strong>10:15–10:16</strong> Wrote the naive pipeline as a fluent session would, then the kit (CLAIM.md, CLAUDE.md, auditor, /audit, verify.py).</li>
-<li><strong>10:16</strong> Ran the workflow audit (C) and a fresh ad hoc review (B) in parallel on separate copies with hint-free docstrings. The planted-truth generator was never visible to them.</li>
-<li><strong>10:17</strong> Built the corrected pipeline <em>independently</em>, as my own ground truth for scoring the auditors.</li>
-<li><strong>10:17</strong> <strong>B came back having found everything.</strong> This was the most important moment of the task: my pitch was weaker than I thought. I added condition A (Claude authoring from scratch). It avoided the leak itself but still reported a test-selected headline with no null control. I rewrote the thesis from “detection” to “process and accountability”.</li>
-<li><strong>10:18</strong> C returned. I cross-checked its numbers against mine. One discrepancy (within-strata 0.75 vs my 0.69) traced to regularisation, and I report the range rather than either number.</li>
-<li><strong>10:20</strong> Ran the calibration audit (D) on the corrected pipeline, because Anthropic’s own guidance warns that adversarial reviewers over-report.</li>
-<li><strong>10:19–10:22</strong> Drafted this doc in parallel; checked every number against the output files.</li>
-<li><strong>10:24</strong> D returned <strong>WEAKENED</strong>, catching three errors in my own draft numbers (test-fold-selected range, unclustered CI, late-layer wording). I verified the two quantitative ones with my own bootstrap before accepting them, then corrected the doc. I did not take the auditor’s word for it either.</li>
+<li>the grouped nested CV;</li>
+<li>both null controls;</li>
+<li>surface baselines and stratified scores;</li>
+<li>clustered bootstraps;</li>
+<li>reproduction commands and the log entry.</li>
 </ul>
-<p><strong>Where AI helped most:</strong> speed of building a runnable, reproducible demo; parallel independent reviews (impossible to do by hand in two hours); and the research sweep.</p>
-<p><strong>Where I made the calls:</strong></p>
+<p>Measured from this session’s logs:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>Agent wall-clock</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fresh-context audit (C)</td>
+<td>2.3 min</td>
+</tr>
+<tr class="even">
+<td>Calibration audit (D)</td>
+<td>4.1 min</td>
+</tr>
+<tr class="odd">
+<td>Ad hoc review (B)</td>
+<td>1.5 min</td>
+</tr>
+<tr class="even">
+<td>Corrected pipeline end to end</td>
+<td>~0.6 min</td>
+</tr>
+</tbody>
+</table>
+<p>I am <strong>not</strong> claiming measured time savings. The researcher-side allowances in the workshop (about 4 minutes on <code>CLAIM.md</code>, a few minutes reading the verdict) are allowances, not observations. A pilot would measure total researcher time including setup, review and rework, and whether the verdict changed the next step.</p>
+<p><strong>How the artifact maps onto the role’s duties.</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role duty (from the Research Manager page)</th>
+<th>Deliverable in this submission</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Run technical workshops on AI tools for research and coding</td>
+<td>The 30-minute session, the live demo and the one-page handout</td>
+</tr>
+<tr class="even">
+<td>Hands-on debugging to unblock experiments</td>
+<td><code>verify.py</code> + <code>/audit</code> catch the leakage and confound bugs a manager would otherwise find by reading code; <code>AUDIT.md</code> is reviewable in minutes</td>
+</tr>
+<tr class="odd">
+<td>Help teams set goals, track progress, report to the Programme Manager</td>
+<td>Verdict lines in <code>results/LOG.md</code>, read at stand-up, rolled into weekly reports</td>
+</tr>
+<tr class="even">
+<td>Evaluate project proposals</td>
+<td>The <code>CLAIM.md</code> template doubles as a falsifiability check on proposals</td>
+</tr>
+<tr class="odd">
+<td>Advise on tooling</td>
+<td>Proportionality rules: when the loop is worth its cost and when it isn’t</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Follow-up I would run as Research Manager:</strong></p>
 <ul>
-<li>the choice of what to teach, and rejecting the generic version;</li>
-<li>designing the planted traps so they mirror real probing critiques;</li>
-<li>treating my own pitch as a hypothesis and adding conditions A and D to test it;</li>
-<li>catching the base-rate flaw in my first confound metric;</li>
-<li>accepting the auditor’s correction of my own reporting, but only after reproducing it independently;</li>
-<li>framing n = 1 honestly.</li>
+<li>At the next team check-in, review one real <code>CLAIM.md</code> per team and record setup, review and rework time, and whether it changed the next step.</li>
+<li>By week 6, collect a “things our audits caught” page. This becomes the next cohort’s workshop material, built from real failures in LASR’s own projects.</li>
 </ul>
-<p>[Varad: add or adjust any calls you made yourself here]</p>
-<p><strong>Division of labour, honestly:</strong> Claude wrote most of the code and first-draft prose; I directed, checked numbers against outputs, and made the framing decisions above. Full annotated logs: <code>runs/</code> in the repo (A/B/C/D outputs + <code>SCORECARD.md</code>).</p>
+<p><strong>Why I’d be good at running this.</strong></p>
+<ul>
+<li><strong>Mentoring.</strong> This autumn I mentor two SPAR projects on AI-welfare evaluation. The mentees range from industry engineers at Google and Meta to postgraduate students without heavy ML backgrounds, and the main design is pre-registered. The most valuable mentor intervention is rarely writing code. It is asking, before anything runs, what the result must generalise to and what would embarrass it. This workshop hands that question to every fellow.</li>
+<li><strong>Industry.</strong> As a Research Scientist at Amazon Alexa AI and an engineer at Microsoft Azure ML, I learned the same lesson at production scale: an evaluation number is only as good as the split behind it.</li>
+<li><strong>Programmes like LASR.</strong> As a Senior Research Fellow in Pivotal’s programme at UK AISI, I have been inside the kind of fellowship this role supports, alongside teaching and research assistance in Oxford’s Department of Computer Science.</li>
+</ul>
+<h1 id="part-4-my-process">Part 4: My process</h1>
+<p><strong>Tools.</strong></p>
+<ul>
+<li><strong>Claude (Opus 5.5, claude.ai agentic workspace):</strong> built and ran everything: the simulated data, both pipelines, the kit, four review runs, the web research and the repo.</li>
+<li><strong>ChatGPT/Codex:</strong> used as a <strong>second-model critic</strong>. It independently reproduced the main numbers and critiqued the submission, and drafted an alternative workshop design.</li>
+<li>I directed both.</li>
+</ul>
+<p><strong>My calls.</strong></p>
+<ul>
+<li>I chose to seek a second-model critique.</li>
+<li>I assessed which criticisms to accept or reject.</li>
+<li>I required a stronger connection to LASR’s role and cohort.</li>
+</ul>
+<p>Claude and GPT proposed the combined design; I directed the comparison and approved the final scope. The assistants generated the code and performed the recorded computational checks.</p>
+<p>On GPT’s two overclaiming points: I initially set them aside. The final version applies a one-line correction to the “publishable finding” sentence, because it was factually wrong for synthetic data, and adds a scope qualifier (“in this example”) to the detection claim.</p>
+<p><strong>What changed because of criticism (the audit trail).</strong></p>
+<ol type="1">
+<li>My first pitch, that AI writes buggy code so you should check it, was falsified by run B. Claude added run A and reframed the thesis around process.</li>
+<li>The calibration audit (D) caught three errors in the corrected write-up; two were reproduced and fixed in the pipeline.</li>
+<li>GPT’s review led to:
+<ul>
+<li>integrating the clustered CI into the main script;</li>
+<li>labelling the accuracy vs balanced-accuracy metrics;</li>
+<li>reconciling the fold counts;</li>
+<li>describing the auditor as a checker, not an authority;</li>
+<li>cutting the live demo to two controls;</li>
+<li>adding proportionality rules;</li>
+<li>removing any claim of measured time savings;</li>
+<li>rewriting this attribution.</li>
+</ul></li>
+<li>Arcadia’s scaffold and oversight posts, surfaced by GPT’s research, shaped the proportionality and “human owns the claim” framing.</li>
+</ol>
+<p><strong>Timeline (BST, 23 Oct; approximate).</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Step</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10:06</td>
+<td>Clock started</td>
+</tr>
+<tr class="even">
+<td>10:08</td>
+<td>Task received; topic chosen; build started</td>
+</tr>
+<tr class="odd">
+<td>10:16-10:24</td>
+<td>Runs A-D and research</td>
+</tr>
+<tr class="even">
+<td>10:26</td>
+<td>Repo pushed to GitHub, doc drafted</td>
+</tr>
+<tr class="odd">
+<td>10:41</td>
+<td>GPT critique received</td>
+</tr>
+<tr class="even">
+<td>10:52</td>
+<td>Final scope agreed</td>
+</tr>
+<tr class="odd">
+<td>~11:15</td>
+<td>Revisions, re-runs, final checks</td>
+</tr>
+</tbody>
+</table>
+<p>Full annotated outputs: <code>runs/</code> (A/B/C/D + <code>SCORECARD.md</code>) and <code>results/LOG.md</code>.</p>
 <h2 id="with-more-time">With more time</h2>
 <ol type="1">
-<li><strong>Real model, not simulated:</strong> run on residual-stream activations from a small open model (e.g. a Llama/Gemma-class model) on Marks &amp; Tegmark-style true/false + negated datasets. The kit doesn’t change; the planted ground truth goes away, which is why I started simulated.</li>
-<li><strong>n &gt; 1:</strong> run each review condition 10× with different seeds and phrasings to measure <em>variance</em>. My hypothesis is that the real cost of ad hoc review is unreliability across sessions, not average quality.</li>
-<li><strong>Subtler traps</strong> that a fresh ad hoc review plausibly misses: label misalignment after a sort or dedup, token-position leakage, a familiarity confound. These would test whether the checklist adds detection, not just process.</li>
-<li><strong>Checklist variants as separate agent files</strong> for evals, control/monitoring, steering, and SAE projects, co-written with 2–3 LASR supervisors.</li>
-<li><strong>Measure the workshop:</strong> before/after, count results presented with a verdict line, and audit-caught issues per team by week 6; collect a fellow-written “bugs we caught” page for the next cohort.</li>
+<li><strong>Real activations.</strong> Use a small open model on Marks &amp; Tegmark-style datasets with negations. The kit is unchanged; only the planted ground truth goes away.</li>
+<li><strong>More runs.</strong> Repeat each review condition about 10 times to measure <em>variance</em>. My hypothesis is that the real cost of ad hoc review is inconsistency across sessions.</li>
+<li><strong>Subtler traps</strong> that ad hoc review plausibly misses: label misalignment after a sort, token-position leakage, a familiarity confound.</li>
+<li><strong>A pilot with one cohort.</strong> Measure researcher time including rework, verdict lines that changed a decision, and the transfer-answer quality from the exit question.</li>
+<li><strong>Falsifier packs per LASR area,</strong> co-written with 2-3 supervisors.</li>
 </ol>
 <h2 id="sources">Sources</h2>
 <ul>
-<li>LASR Labs: <a href="https://www.lasrlabs.org/" class="uri">https://www.lasrlabs.org/</a> · Summer 2026 call: <a href="https://www.lesswrong.com/posts/dzSAsL4fPuBvCCarT/lasr-labs-summer-2026-applications-are-open" class="uri">https://www.lesswrong.com/posts/dzSAsL4fPuBvCCarT/lasr-labs-summer-2026-applications-are-open</a> · Winter 2027 call: <a href="https://www.lesswrong.com/posts/vNrJhmYhkGWScqvjT/lasr-labs-winter-2027-applications-are-open" class="uri">https://www.lesswrong.com/posts/vNrJhmYhkGWScqvjT/lasr-labs-winter-2027-applications-are-open</a> · Retrospective: <a href="https://www.lesswrong.com/posts/CCxB3e2oL8yeLKESH/lasr-retrospective-and-advice" class="uri">https://www.lesswrong.com/posts/CCxB3e2oL8yeLKESH/lasr-retrospective-and-advice</a></li>
+<li><strong>LASR Labs and Arcadia</strong>
+<ul>
+<li>LASR Labs: <a href="https://www.lasrlabs.org/" class="uri">https://www.lasrlabs.org/</a></li>
+<li>Research Manager role: <a href="https://www.arcadiaimpact.org/careers/research-manager" class="uri">https://www.arcadiaimpact.org/careers/research-manager</a></li>
+<li>Arcadia, “Lessons from building an automated research scaffold”: <a href="https://www.arcadiaimpact.org/blog/lessons-from-building-an-automated-research-scaffold" class="uri">https://www.arcadiaimpact.org/blog/lessons-from-building-an-automated-research-scaffold</a></li>
+<li>Arcadia, “Obstacles to the scalable oversight of auto-alignment research”: <a href="https://www.arcadiaimpact.org/blog/obstacles-to-the-scalable-oversight-of-auto-alignment-research" class="uri">https://www.arcadiaimpact.org/blog/obstacles-to-the-scalable-oversight-of-auto-alignment-research</a></li>
+<li>LASR alumni retrospective: <a href="https://www.lesswrong.com/posts/CCxB3e2oL8yeLKESH/lasr-retrospective-and-advice" class="uri">https://www.lesswrong.com/posts/CCxB3e2oL8yeLKESH/lasr-retrospective-and-advice</a></li>
+<li>LASR Summer 2026 call: <a href="https://www.lesswrong.com/posts/dzSAsL4fPuBvCCarT/lasr-labs-summer-2026-applications-are-open" class="uri">https://www.lesswrong.com/posts/dzSAsL4fPuBvCCarT/lasr-labs-summer-2026-applications-are-open</a></li>
+</ul></li>
+<li><strong>Probing</strong>
+<ul>
 <li>McKenzie et al., <em>Detecting High-Stakes Interactions with Activation Probes</em> (NeurIPS 2025): <a href="https://www.lesswrong.com/posts/utcZSRv2JfahD8yfz/detecting-high-stakes-interactions-with-activation-probes" class="uri">https://www.lesswrong.com/posts/utcZSRv2JfahD8yfz/detecting-high-stakes-interactions-with-activation-probes</a></li>
-<li>Levinstein &amp; Herrmann, <em>Still No Lie Detector for Language Models</em>: <a href="https://arxiv.org/abs/2307.00175" class="uri">https://arxiv.org/abs/2307.00175</a> · Marks &amp; Tegmark, <em>The Geometry of Truth</em>: <a href="https://arxiv.org/abs/2310.06824" class="uri">https://arxiv.org/abs/2310.06824</a> · Hewitt &amp; Liang, control tasks: <a href="https://arxiv.org/abs/1909.03368" class="uri">https://arxiv.org/abs/1909.03368</a></li>
-<li>Kapoor &amp; Narayanan, leakage: <a href="https://reproducible.cs.princeton.edu/" class="uri">https://reproducible.cs.princeton.edu/</a> · Beel et al., AI Scientist evaluation: <a href="https://arxiv.org/abs/2502.14297" class="uri">https://arxiv.org/abs/2502.14297</a></li>
-<li>Perry et al., insecure code with AI assistants: <a href="https://arxiv.org/abs/2211.03622" class="uri">https://arxiv.org/abs/2211.03622</a> · METR developer RCT and 2026 update: <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" class="uri">https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/</a>, <a href="https://evals.alignment.org/blog/2026-02-24-uplift-update/" class="uri">https://evals.alignment.org/blog/2026-02-24-uplift-update/</a> · METR reward hacking: <a href="https://metr.org/blog/2025-06-05-recent-reward-hacking/" class="uri">https://metr.org/blog/2025-06-05-recent-reward-hacking/</a></li>
-<li>Huang et al., self-correction: <a href="https://arxiv.org/abs/2310.01798" class="uri">https://arxiv.org/abs/2310.01798</a> · Panickssery et al., self-preference: <a href="https://arxiv.org/abs/2404.13076" class="uri">https://arxiv.org/abs/2404.13076</a> · Goddard et al., automation bias: <a href="https://academic.oup.com/jamia/article/19/1/121/732254" class="uri">https://academic.oup.com/jamia/article/19/1/121/732254</a></li>
-<li>Claude Code best practices (writer/reviewer, verification subagent, adversarial review caveat): <a href="https://code.claude.com/docs/en/best-practices" class="uri">https://code.claude.com/docs/en/best-practices</a></li>
-<li>Stack Overflow Developer Survey 2025, AI: <a href="https://survey.stackoverflow.co/2025/ai" class="uri">https://survey.stackoverflow.co/2025/ai</a></li>
+<li>Levinstein &amp; Herrmann, <em>Still No Lie Detector for Language Models</em>: <a href="https://arxiv.org/abs/2307.00175" class="uri">https://arxiv.org/abs/2307.00175</a></li>
+<li>Marks &amp; Tegmark, <em>The Geometry of Truth</em>: <a href="https://arxiv.org/abs/2310.06824" class="uri">https://arxiv.org/abs/2310.06824</a></li>
+<li>Hewitt &amp; Liang, <em>Designing and Interpreting Probes with Control Tasks</em>: <a href="https://arxiv.org/abs/1909.03368" class="uri">https://arxiv.org/abs/1909.03368</a></li>
+</ul></li>
+<li><strong>Leakage and automated research</strong>
+<ul>
+<li>Kapoor &amp; Narayanan, leakage and the reproducibility crisis: <a href="https://reproducible.cs.princeton.edu/" class="uri">https://reproducible.cs.princeton.edu/</a></li>
+<li>Beel et al., evaluation of the AI Scientist: <a href="https://arxiv.org/abs/2502.14297" class="uri">https://arxiv.org/abs/2502.14297</a></li>
+</ul></li>
+<li><strong>AI assistance and human oversight</strong>
+<ul>
+<li>Perry et al., <em>Do Users Write More Insecure Code with AI Assistants?</em>: <a href="https://arxiv.org/abs/2211.03622" class="uri">https://arxiv.org/abs/2211.03622</a></li>
+<li>Goddard et al., automation bias: <a href="https://academic.oup.com/jamia/article/19/1/121/732254" class="uri">https://academic.oup.com/jamia/article/19/1/121/732254</a></li>
+<li>Panickssery et al., self-preference in LLM evaluators: <a href="https://arxiv.org/abs/2404.13076" class="uri">https://arxiv.org/abs/2404.13076</a></li>
+<li>METR developer study: <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/" class="uri">https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/</a></li>
+<li>Claude Code best practices: <a href="https://code.claude.com/docs/en/best-practices" class="uri">https://code.claude.com/docs/en/best-practices</a></li>
+</ul></li>
 </ul>
+<p><strong>Time to completion: 1 hour 11 minutes, as at the time of submission.</strong></p>

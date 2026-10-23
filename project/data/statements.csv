@@ -1,0 +1,1201 @@
+row_id,statement_id,fact_id,domain,paraphrase,text,label
+0,206,103,arith,0,16 plus 19 is 35.,1
+1,159,79,element,2,"On the periodic table, cobalt is not written as Co.",0
+2,280,140,arith,0,5 plus 7 is 12.,1
+3,113,56,element,3,The symbol of fluorine is not F.,0
+4,70,35,capital,1,Accra is the capital city of Ghana.,1
+5,79,39,capital,3,The capital city of Vietnam is Jerusalem.,0
+6,237,118,arith,1,6 plus 4 does not equal 10.,0
+7,159,79,element,0,The chemical symbol for cobalt is not Co.,0
+8,156,78,element,3,The symbol of nickel is Ni.,1
+9,269,134,arith,0,7 plus 5 is not 12.,0
+10,39,19,capital,3,The capital city of Turkey is not Ankara.,0
+11,254,127,arith,1,7 plus 16 equals 23.,1
+12,200,100,arith,3,"If you add 6 plus 17, you get 23.",1
+13,2,1,capital,2,"In Germany, the capital is Berlin.",1
+14,210,105,arith,2,The sum of 18 plus 5 is 23.,1
+15,260,130,arith,1,8 plus 13 equals 21.,1
+16,216,108,arith,0,8 plus 19 is 27.,1
+17,196,98,arith,3,"If you add 6 plus 18, you get 24.",1
+18,157,78,element,2,"On the periodic table, nickel is not written as Ni.",0
+19,295,147,arith,0,10 plus 2 is 14.,0
+20,34,17,capital,0,The capital of Poland is Warsaw.,1
+21,48,24,capital,2,"In Austria, the capital is not Buenos Aires.",1
+22,102,51,element,2,"On the periodic table, helium is written as He.",1
+23,1,0,capital,3,The capital city of France is not Paris.,0
+24,184,92,arith,2,The sum of 16 plus 7 is 23.,1
+25,243,121,arith,0,11 plus 15 is not 26.,0
+26,42,21,capital,1,Baghdad is the capital city of Iraq.,1
+27,123,61,element,2,"On the periodic table, silicon is not written as Si.",0
+28,199,99,arith,0,19 plus 15 is not 34.,0
+29,222,111,arith,2,The sum of 8 plus 13 is 21.,1
+30,215,107,arith,0,17 plus 11 is not 28.,0
+31,73,36,capital,3,The capital city of Ethiopia is not Addis Ababa.,0
+32,245,122,arith,2,The sum of 4 plus 15 is 18.,0
+33,211,105,arith,0,18 plus 5 is 22.,0
+34,111,55,element,3,The symbol of oxygen is not O.,0
+35,288,144,arith,2,The sum of 9 plus 9 is 18.,1
+36,98,49,capital,2,"In Syria, the capital is not Beijing.",1
+37,100,50,element,2,"On the periodic table, hydrogen is written as H.",1
+38,167,83,element,1,I is not the symbol for iodine.,0
+39,224,112,arith,2,The sum of 16 plus 6 is 22.,1
+40,51,25,capital,3,The capital city of Hungary is not Budapest.,0
+41,120,60,element,1,Al is the symbol for aluminium.,1
+42,160,80,element,3,The symbol of titanium is Ti.,1
+43,165,82,element,0,The chemical symbol for manganese is not Mn.,0
+44,105,52,element,0,The chemical symbol for lithium is not Li.,0
+45,117,58,element,3,The symbol of sodium is not Na.,0
+46,109,54,element,2,"On the periodic table, nitrogen is not written as N.",0
+47,289,144,arith,1,9 plus 9 does not equal 18.,0
+48,221,110,arith,0,10 plus 14 is 25.,0
+49,218,109,arith,2,The sum of 2 plus 6 is 8.,1
+50,263,131,arith,1,17 plus 18 does not equal 35.,0
+51,189,94,arith,1,5 plus 5 does not equal 10.,0
+52,189,94,arith,3,"If you add 5 plus 5, you do not get 10.",0
+53,26,13,capital,1,Canberra is the capital city of Australia.,1
+54,184,92,arith,0,16 plus 7 is 23.,1
+55,106,53,element,0,The chemical symbol for carbon is C.,1
+56,174,87,element,2,"On the periodic table, boron is written as B.",1
+57,56,28,capital,1,Amsterdam is the capital city of Netherlands.,1
+58,146,73,element,0,The chemical symbol for tin is Sn.,1
+59,5,2,capital,0,The capital of Italy is Nairobi.,0
+60,101,50,element,2,"On the periodic table, hydrogen is not written as H.",0
+61,76,38,capital,3,The capital city of Thailand is Bangkok.,1
+62,238,119,arith,0,16 plus 15 is 31.,1
+63,192,96,arith,2,The sum of 15 plus 5 is 20.,1
+64,29,14,capital,3,The capital city of Norway is Baghdad.,0
+65,123,61,element,0,The chemical symbol for silicon is not Si.,0
+66,127,63,element,1,S is not the symbol for sulfur.,0
+67,218,109,arith,0,2 plus 6 is 8.,1
+68,204,102,arith,2,The sum of 6 plus 5 is 11.,1
+69,261,130,arith,3,"If you add 8 plus 13, you do not get 21.",0
+70,156,78,element,2,"On the periodic table, nickel is written as Ni.",1
+71,90,45,capital,2,"In Saudi Arabia, the capital is Riyadh.",1
+72,12,6,capital,1,Beijing is the capital city of China.,1
+73,47,23,capital,2,"In Ukraine, the capital is not Kyiv.",0
+74,275,137,arith,3,"If you add 17 plus 18, you do not get 35.",0
+75,299,149,arith,1,8 plus 10 does not equal 18.,0
+76,76,38,capital,0,The capital of Thailand is Bangkok.,1
+77,166,83,element,3,The symbol of iodine is I.,1
+78,173,86,element,0,The chemical symbol for barium is He.,0
+79,138,69,element,1,Cu is the symbol for copper.,1
+80,98,49,capital,0,The capital of Syria is not Beijing.,1
+81,250,125,arith,0,10 plus 11 is 21.,1
+82,151,75,element,1,Ti is the symbol for mercury.,0
+83,5,2,capital,2,"In Italy, the capital is Nairobi.",0
+84,101,50,element,0,The chemical symbol for hydrogen is not H.,0
+85,106,53,element,1,C is the symbol for carbon.,1
+86,125,62,element,1,P is not the symbol for phosphorus.,0
+87,297,148,arith,2,The sum of 11 plus 19 is 28.,0
+88,60,30,capital,2,"In Mexico, the capital is Mexico City.",1
+89,121,60,element,1,Al is not the symbol for aluminium.,0
+90,203,101,arith,3,"If you add 18 plus 2, you do not get 20.",0
+91,171,85,element,2,"On the periodic table, tungsten is written as H.",0
+92,81,40,capital,1,Amman is the capital city of Indonesia.,0
+93,291,145,arith,0,10 plus 11 is not 21.,0
+94,53,26,capital,1,Havana is the capital city of Ireland.,0
+95,187,93,arith,2,The sum of 18 plus 19 is not 37.,0
+96,176,88,element,1,Kr is the symbol for krypton.,1
+97,15,7,capital,2,"In India, the capital is not New Delhi.",0
+98,53,26,capital,0,The capital of Ireland is Havana.,0
+99,273,136,arith,3,"If you add 14 plus 16, you get 29.",0
+100,274,137,arith,2,The sum of 17 plus 18 is 35.,1
+101,252,126,arith,2,The sum of 18 plus 2 is 20.,1
+102,109,54,element,3,The symbol of nitrogen is not N.,0
+103,92,46,capital,1,Madrid is not the capital city of Israel.,1
+104,238,119,arith,1,16 plus 15 equals 31.,1
+105,83,41,capital,0,The capital of Philippines is Beirut.,0
+106,203,101,arith,1,18 plus 2 does not equal 20.,0
+107,97,48,capital,0,The capital of Lebanon is not Beirut.,0
+108,135,67,element,0,The chemical symbol for calcium is not Ca.,0
+109,142,71,element,0,The chemical symbol for silver is Ag.,1
+110,178,89,element,2,"On the periodic table, xenon is written as Xe.",1
+111,21,10,capital,2,"In Peru, the capital is not Lima.",0
+112,38,19,capital,0,The capital of Turkey is Ankara.,1
+113,295,147,arith,2,The sum of 10 plus 2 is 14.,0
+114,257,128,arith,3,"If you add 7 plus 8, you do not get 15.",0
+115,237,118,arith,0,6 plus 4 is not 10.,0
+116,54,27,capital,1,Brussels is the capital city of Belgium.,1
+117,84,42,capital,3,The capital city of Nepal is Kathmandu.,1
+118,290,145,arith,1,10 plus 11 does not equal 24.,1
+119,38,19,capital,3,The capital city of Turkey is Ankara.,1
+120,23,11,capital,0,The capital of Chile is not Santiago.,0
+121,116,58,element,0,The chemical symbol for sodium is Na.,1
+122,14,7,capital,2,"In India, the capital is New Delhi.",1
+123,252,126,arith,1,18 plus 2 equals 20.,1
+124,246,123,arith,1,10 plus 6 equals 16.,1
+125,116,58,element,3,The symbol of sodium is Na.,1
+126,138,69,element,3,The symbol of copper is Cu.,1
+127,88,44,capital,2,"In Bangladesh, the capital is Dhaka.",1
+128,176,88,element,0,The chemical symbol for krypton is Kr.,1
+129,277,138,arith,0,8 plus 18 is not 26.,0
+130,42,21,capital,2,"In Iraq, the capital is Baghdad.",1
+131,287,143,arith,3,"If you add 15 plus 7, you do not get 22.",0
+132,198,99,arith,2,The sum of 19 plus 15 is 34.,1
+133,216,108,arith,3,"If you add 8 plus 19, you get 27.",1
+134,208,104,arith,2,The sum of 9 plus 16 is 25.,1
+135,8,4,capital,3,The capital city of Portugal is Lisbon.,1
+136,84,42,capital,1,Kathmandu is the capital city of Nepal.,1
+137,27,13,capital,2,"In Australia, the capital is Tehran.",0
+138,117,58,element,1,Na is not the symbol for sodium.,0
+139,71,35,capital,1,Accra is not the capital city of Ghana.,0
+140,36,18,capital,3,The capital city of Greece is Athens.,1
+141,272,136,arith,1,14 plus 16 does not equal 29.,1
+142,283,141,arith,0,3 plus 3 is not 6.,0
+143,167,83,element,2,"On the periodic table, iodine is not written as I.",0
+144,265,132,arith,1,4 plus 16 does not equal 20.,0
+145,137,68,element,1,Fe is not the symbol for iron.,0
+146,200,100,arith,1,6 plus 17 equals 23.,1
+147,248,124,arith,0,14 plus 4 is 18.,1
+148,21,10,capital,3,The capital city of Peru is not Lima.,0
+149,75,37,capital,2,"In Morocco, the capital is not Rabat.",0
+150,146,73,element,2,"On the periodic table, tin is written as Sn.",1
+151,240,120,arith,2,The sum of 12 plus 5 is 17.,1
+152,236,118,arith,3,"If you add 6 plus 4, you get 10.",1
+153,138,69,element,0,The chemical symbol for copper is Cu.,1
+154,141,70,element,2,"On the periodic table, zinc is not written as Zn.",0
+155,125,62,element,3,The symbol of phosphorus is not P.,0
+156,51,25,capital,2,"In Hungary, the capital is not Budapest.",0
+157,178,89,element,0,The chemical symbol for xenon is Xe.,1
+158,145,72,element,3,The symbol of gold is not Au.,0
+159,245,122,arith,0,4 plus 15 is 18.,0
+160,197,98,arith,0,6 plus 18 is 27.,0
+161,83,41,capital,1,Beirut is the capital city of Philippines.,0
+162,259,129,arith,3,"If you add 2 plus 19, you get 19.",0
+163,161,80,element,2,"On the periodic table, titanium is written as W.",0
+164,121,60,element,3,The symbol of aluminium is not Al.,0
+165,163,81,element,0,The chemical symbol for chromium is not Cr.,0
+166,66,33,capital,3,The capital city of Cuba is Havana.,1
+167,121,60,element,2,"On the periodic table, aluminium is not written as Al.",0
+168,29,14,capital,0,The capital of Norway is Baghdad.,0
+169,217,108,arith,2,The sum of 8 plus 19 is not 27.,0
+170,166,83,element,1,I is the symbol for iodine.,1
+171,52,26,capital,2,"In Ireland, the capital is not Havana.",1
+172,56,28,capital,2,"In Netherlands, the capital is Amsterdam.",1
+173,285,142,arith,1,11 plus 19 does not equal 30.,0
+174,296,148,arith,1,11 plus 19 equals 30.,1
+175,62,31,capital,2,"In Argentina, the capital is not Bangkok.",1
+176,183,91,arith,1,12 plus 17 does not equal 29.,0
+177,94,47,capital,2,"In Jordan, the capital is Amman.",1
+178,85,42,capital,2,"In Nepal, the capital is Damascus.",0
+179,86,43,capital,3,The capital city of Pakistan is Islamabad.,1
+180,30,15,capital,1,Stockholm is the capital city of Sweden.,1
+181,279,139,arith,1,6 plus 6 equals 10.,0
+182,241,120,arith,0,12 plus 5 is 18.,0
+183,20,10,capital,2,"In Peru, the capital is not Warsaw.",1
+184,238,119,arith,3,"If you add 16 plus 15, you get 31.",1
+185,196,98,arith,2,The sum of 6 plus 18 is 24.,1
+186,122,61,element,1,K is not the symbol for silicon.,1
+187,17,8,capital,3,The capital city of Egypt is not Cairo.,0
+188,164,82,element,3,The symbol of manganese is Mn.,1
+189,182,91,arith,3,"If you add 12 plus 17, you get 29.",1
+190,24,12,capital,0,The capital of Canada is not Ankara.,1
+191,134,67,element,0,The chemical symbol for calcium is not Au.,1
+192,142,71,element,3,The symbol of silver is Ag.,1
+193,176,88,element,3,The symbol of krypton is Kr.,1
+194,169,84,element,3,The symbol of bromine is not Br.,0
+195,87,43,capital,0,The capital of Pakistan is not Islamabad.,0
+196,158,79,element,1,Co is the symbol for cobalt.,1
+197,196,98,arith,1,6 plus 18 equals 24.,1
+198,92,46,capital,2,"In Israel, the capital is not Madrid.",1
+199,154,77,element,1,Pt is the symbol for platinum.,1
+200,272,136,arith,0,14 plus 16 is not 29.,1
+201,199,99,arith,3,"If you add 19 plus 15, you do not get 34.",0
+202,288,144,arith,1,9 plus 9 equals 18.,1
+203,75,37,capital,0,The capital of Morocco is not Rabat.,0
+204,194,97,arith,1,15 plus 12 equals 27.,1
+205,80,40,capital,1,Jakarta is the capital city of Indonesia.,1
+206,286,143,arith,3,"If you add 15 plus 7, you get 22.",1
+207,297,148,arith,0,11 plus 19 is 28.,0
+208,104,52,element,0,The chemical symbol for lithium is Li.,1
+209,194,97,arith,2,The sum of 15 plus 12 is 27.,1
+210,25,12,capital,0,The capital of Canada is not Ottawa.,0
+211,280,140,arith,2,The sum of 5 plus 7 is 12.,1
+212,115,57,element,0,The chemical symbol for neon is P.,0
+213,76,38,capital,1,Bangkok is the capital city of Thailand.,1
+214,39,19,capital,1,Ankara is not the capital city of Turkey.,0
+215,170,85,element,2,"On the periodic table, tungsten is not written as H.",1
+216,74,37,capital,2,"In Morocco, the capital is Rabat.",1
+217,143,71,element,0,The chemical symbol for silver is not Ag.,0
+218,188,94,arith,0,5 plus 5 is 10.,1
+219,27,13,capital,1,Tehran is the capital city of Australia.,0
+220,283,141,arith,2,The sum of 3 plus 3 is not 6.,0
+221,13,6,capital,2,"In China, the capital is not Beijing.",0
+222,128,64,element,0,The chemical symbol for chlorine is Cl.,1
+223,282,141,arith,1,3 plus 3 equals 6.,1
+224,250,125,arith,3,"If you add 10 plus 11, you get 21.",1
+225,193,96,arith,0,15 plus 5 is not 20.,0
+226,148,74,element,0,The chemical symbol for lead is Pb.,1
+227,58,29,capital,0,The capital of Denmark is not Addis Ababa.,1
+228,197,98,arith,1,6 plus 18 equals 27.,0
+229,161,80,element,0,The chemical symbol for titanium is W.,0
+230,149,74,element,2,"On the periodic table, lead is not written as Pb.",0
+231,145,72,element,2,"On the periodic table, gold is not written as Au.",0
+232,65,32,capital,1,Bogota is not the capital city of Colombia.,0
+233,89,44,capital,1,Dhaka is not the capital city of Bangladesh.,0
+234,88,44,capital,3,The capital city of Bangladesh is Dhaka.,1
+235,269,134,arith,3,"If you add 7 plus 5, you do not get 12.",0
+236,184,92,arith,1,16 plus 7 equals 23.,1
+237,292,146,arith,1,3 plus 10 equals 13.,1
+238,137,68,element,2,"On the periodic table, iron is not written as Fe.",0
+239,60,30,capital,1,Mexico City is the capital city of Mexico.,1
+240,174,87,element,1,B is the symbol for boron.,1
+241,254,127,arith,2,The sum of 7 plus 16 is 23.,1
+242,227,113,arith,0,6 plus 19 is 27.,0
+243,140,70,element,3,The symbol of zinc is Zn.,1
+244,7,3,capital,0,The capital of Spain is Lima.,0
+245,66,33,capital,0,The capital of Cuba is Havana.,1
+246,180,90,arith,2,The sum of 11 plus 7 is 18.,1
+247,115,57,element,2,"On the periodic table, neon is written as P.",0
+248,264,132,arith,1,4 plus 16 does not equal 23.,1
+249,33,16,capital,2,"In Finland, the capital is Kyiv.",0
+250,114,57,element,3,The symbol of neon is Ne.,1
+251,49,24,capital,1,Buenos Aires is the capital city of Austria.,0
+252,17,8,capital,2,"In Egypt, the capital is not Cairo.",0
+253,279,139,arith,3,"If you add 6 plus 6, you get 10.",0
+254,175,87,element,0,The chemical symbol for boron is not B.,0
+255,131,65,element,0,The chemical symbol for argon is Zn.,0
+256,43,21,capital,0,The capital of Iraq is not Baghdad.,0
+257,150,75,element,0,The chemical symbol for mercury is Hg.,1
+258,111,55,element,0,The chemical symbol for oxygen is not O.,0
+259,15,7,capital,0,The capital of India is not New Delhi.,0
+260,113,56,element,0,The chemical symbol for fluorine is not F.,0
+261,132,66,element,0,The chemical symbol for potassium is K.,1
+262,8,4,capital,0,The capital of Portugal is Lisbon.,1
+263,185,92,arith,1,16 plus 7 does not equal 23.,0
+264,57,28,capital,3,The capital city of Netherlands is Accra.,0
+265,209,104,arith,2,The sum of 9 plus 16 is 24.,0
+266,77,38,capital,0,The capital of Thailand is not Bangkok.,0
+267,144,72,element,1,Au is the symbol for gold.,1
+268,198,99,arith,1,19 plus 15 equals 34.,1
+269,90,45,capital,0,The capital of Saudi Arabia is Riyadh.,1
+270,230,115,arith,1,5 plus 18 equals 23.,1
+271,37,18,capital,3,The capital city of Greece is not Athens.,0
+272,269,134,arith,1,7 plus 5 does not equal 12.,0
+273,260,130,arith,2,The sum of 8 plus 13 is 21.,1
+274,258,129,arith,0,2 plus 19 is 21.,1
+275,173,86,element,2,"On the periodic table, barium is written as He.",0
+276,152,76,element,3,The symbol of uranium is U.,1
+277,169,84,element,2,"On the periodic table, bromine is not written as Br.",0
+278,110,55,element,3,The symbol of oxygen is not Al.,1
+279,229,114,arith,1,19 plus 10 equals 32.,0
+280,71,35,capital,3,The capital city of Ghana is not Accra.,0
+281,66,33,capital,2,"In Cuba, the capital is Havana.",1
+282,165,82,element,2,"On the periodic table, manganese is not written as Mn.",0
+283,16,8,capital,1,Cairo is the capital city of Egypt.,1
+284,284,142,arith,1,11 plus 19 does not equal 33.,1
+285,293,146,arith,1,3 plus 10 does not equal 13.,0
+286,291,145,arith,3,"If you add 10 plus 11, you do not get 21.",0
+287,170,85,element,3,The symbol of tungsten is not H.,1
+288,236,118,arith,2,The sum of 6 plus 4 is 10.,1
+289,108,54,element,0,The chemical symbol for nitrogen is N.,1
+290,184,92,arith,3,"If you add 16 plus 7, you get 23.",1
+291,267,133,arith,0,5 plus 4 is not 9.,0
+292,15,7,capital,1,New Delhi is not the capital city of India.,0
+293,181,90,arith,0,11 plus 7 is 17.,0
+294,18,9,capital,1,Nairobi is the capital city of Kenya.,1
+295,52,26,capital,1,Havana is not the capital city of Ireland.,1
+296,234,117,arith,3,"If you add 5 plus 11, you get 16.",1
+297,153,76,element,2,"On the periodic table, uranium is not written as U.",0
+298,89,44,capital,3,The capital city of Bangladesh is not Dhaka.,0
+299,201,100,arith,2,The sum of 6 plus 17 is 20.,0
+300,293,146,arith,0,3 plus 10 is not 13.,0
+301,235,117,arith,1,5 plus 11 does not equal 16.,0
+302,260,130,arith,0,8 plus 13 is 21.,1
+303,263,131,arith,0,17 plus 18 is not 35.,0
+304,232,116,arith,3,"If you add 5 plus 4, you get 9.",1
+305,219,109,arith,2,The sum of 2 plus 6 is 5.,0
+306,290,145,arith,0,10 plus 11 is not 24.,1
+307,74,37,capital,0,The capital of Morocco is Rabat.,1
+308,43,21,capital,3,The capital city of Iraq is not Baghdad.,0
+309,82,41,capital,3,The capital city of Philippines is Manila.,1
+310,54,27,capital,3,The capital city of Belgium is Brussels.,1
+311,88,44,capital,1,Dhaka is the capital city of Bangladesh.,1
+312,71,35,capital,0,The capital of Ghana is not Accra.,0
+313,44,22,capital,2,"In Russia, the capital is Moscow.",1
+314,257,128,arith,1,7 plus 8 does not equal 15.,0
+315,69,34,capital,3,The capital city of Nigeria is not Abuja.,0
+316,162,81,element,3,The symbol of chromium is Cr.,1
+317,154,77,element,2,"On the periodic table, platinum is written as Pt.",1
+318,137,68,element,3,The symbol of iron is not Fe.,0
+319,95,47,capital,1,Lisbon is the capital city of Jordan.,0
+320,222,111,arith,0,8 plus 13 is 21.,1
+321,96,48,capital,2,"In Lebanon, the capital is Beirut.",1
+322,118,59,element,0,The chemical symbol for magnesium is not Cl.,1
+323,150,75,element,3,The symbol of mercury is Hg.,1
+324,172,86,element,1,Ba is the symbol for barium.,1
+325,39,19,capital,2,"In Turkey, the capital is not Ankara.",0
+326,134,67,element,3,The symbol of calcium is not Au.,1
+327,261,130,arith,0,8 plus 13 is not 21.,0
+328,91,45,capital,2,"In Saudi Arabia, the capital is not Riyadh.",0
+329,89,44,capital,0,The capital of Bangladesh is not Dhaka.,0
+330,172,86,element,3,The symbol of barium is Ba.,1
+331,287,143,arith,0,15 plus 7 is not 22.,0
+332,91,45,capital,0,The capital of Saudi Arabia is not Riyadh.,0
+333,253,126,arith,2,The sum of 18 plus 2 is 17.,0
+334,32,16,capital,0,The capital of Finland is Helsinki.,1
+335,240,120,arith,3,"If you add 12 plus 5, you get 17.",1
+336,8,4,capital,2,"In Portugal, the capital is Lisbon.",1
+337,77,38,capital,1,Bangkok is not the capital city of Thailand.,0
+338,85,42,capital,0,The capital of Nepal is Damascus.,0
+339,0,0,capital,1,New Delhi is not the capital city of France.,1
+340,114,57,element,0,The chemical symbol for neon is Ne.,1
+341,288,144,arith,3,"If you add 9 plus 9, you get 18.",1
+342,165,82,element,3,The symbol of manganese is not Mn.,0
+343,221,110,arith,2,The sum of 10 plus 14 is 25.,0
+344,207,103,arith,2,The sum of 16 plus 19 is not 35.,0
+345,168,84,element,3,The symbol of bromine is Br.,1
+346,289,144,arith,2,The sum of 9 plus 9 is not 18.,0
+347,47,23,capital,0,The capital of Ukraine is not Kyiv.,0
+348,28,14,capital,1,Oslo is the capital city of Norway.,1
+349,264,132,arith,2,The sum of 4 plus 16 is not 23.,1
+350,99,49,capital,0,The capital of Syria is not Damascus.,0
+351,127,63,element,3,The symbol of sulfur is not S.,0
+352,150,75,element,1,Hg is the symbol for mercury.,1
+353,181,90,arith,2,The sum of 11 plus 7 is 17.,0
+354,138,69,element,2,"On the periodic table, copper is written as Cu.",1
+355,105,52,element,2,"On the periodic table, lithium is not written as Li.",0
+356,294,147,arith,0,10 plus 2 is 12.,1
+357,220,110,arith,3,"If you add 10 plus 14, you do not get 25.",1
+358,177,88,element,0,The chemical symbol for krypton is not Kr.,0
+359,230,115,arith,2,The sum of 5 plus 18 is 23.,1
+360,292,146,arith,0,3 plus 10 is 13.,1
+361,19,9,capital,2,"In Kenya, the capital is not Nairobi.",0
+362,289,144,arith,3,"If you add 9 plus 9, you do not get 18.",0
+363,80,40,capital,0,The capital of Indonesia is Jakarta.,1
+364,257,128,arith,0,7 plus 8 is not 15.,0
+365,73,36,capital,0,The capital of Ethiopia is not Addis Ababa.,0
+366,135,67,element,3,The symbol of calcium is not Ca.,0
+367,224,112,arith,3,"If you add 16 plus 6, you get 22.",1
+368,250,125,arith,1,10 plus 11 equals 21.,1
+369,101,50,element,1,H is not the symbol for hydrogen.,0
+370,163,81,element,2,"On the periodic table, chromium is not written as Cr.",0
+371,66,33,capital,1,Havana is the capital city of Cuba.,1
+372,115,57,element,3,The symbol of neon is P.,0
+373,222,111,arith,1,8 plus 13 equals 21.,1
+374,249,124,arith,0,14 plus 4 is not 18.,0
+375,83,41,capital,3,The capital city of Philippines is Beirut.,0
+376,285,142,arith,0,11 plus 19 is not 30.,0
+377,55,27,capital,0,The capital of Belgium is not Brussels.,0
+378,9,4,capital,1,Lisbon is not the capital city of Portugal.,0
+379,210,105,arith,0,18 plus 5 is 23.,1
+380,92,46,capital,3,The capital city of Israel is not Madrid.,1
+381,279,139,arith,0,6 plus 6 is 10.,0
+382,23,11,capital,2,"In Chile, the capital is not Santiago.",0
+383,295,147,arith,1,10 plus 2 equals 14.,0
+384,67,33,capital,2,"In Cuba, the capital is not Havana.",0
+385,117,58,element,2,"On the periodic table, sodium is not written as Na.",0
+386,23,11,capital,3,The capital city of Chile is not Santiago.,0
+387,189,94,arith,2,The sum of 5 plus 5 is not 10.,0
+388,207,103,arith,1,16 plus 19 does not equal 35.,0
+389,241,120,arith,2,The sum of 12 plus 5 is 18.,0
+390,4,2,capital,0,The capital of Italy is Rome.,1
+391,120,60,element,2,"On the periodic table, aluminium is written as Al.",1
+392,14,7,capital,0,The capital of India is New Delhi.,1
+393,20,10,capital,1,Warsaw is not the capital city of Peru.,1
+394,223,111,arith,1,8 plus 13 does not equal 21.,0
+395,225,112,arith,0,16 plus 6 is not 22.,0
+396,246,123,arith,3,"If you add 10 plus 6, you get 16.",1
+397,149,74,element,1,Pb is not the symbol for lead.,0
+398,212,106,arith,3,"If you add 12 plus 19, you get 31.",1
+399,126,63,element,2,"On the periodic table, sulfur is written as S.",1
+400,256,128,arith,3,"If you add 7 plus 8, you do not get 18.",1
+401,186,93,arith,2,The sum of 18 plus 19 is not 35.,1
+402,10,5,capital,0,The capital of Japan is Tokyo.,1
+403,276,138,arith,1,8 plus 18 does not equal 28.,1
+404,298,149,arith,0,8 plus 10 is 18.,1
+405,259,129,arith,1,2 plus 19 equals 19.,0
+406,190,95,arith,2,The sum of 17 plus 8 is 25.,1
+407,187,93,arith,1,18 plus 19 does not equal 37.,0
+408,256,128,arith,2,The sum of 7 plus 8 is not 18.,1
+409,267,133,arith,1,5 plus 4 does not equal 9.,0
+410,82,41,capital,2,"In Philippines, the capital is Manila.",1
+411,299,149,arith,3,"If you add 8 plus 10, you do not get 18.",0
+412,220,110,arith,1,10 plus 14 does not equal 25.,1
+413,164,82,element,1,Mn is the symbol for manganese.,1
+414,122,61,element,3,The symbol of silicon is not K.,1
+415,94,47,capital,3,The capital city of Jordan is Amman.,1
+416,263,131,arith,3,"If you add 17 plus 18, you do not get 35.",0
+417,273,136,arith,1,14 plus 16 equals 29.,0
+418,183,91,arith,3,"If you add 12 plus 17, you do not get 29.",0
+419,26,13,capital,0,The capital of Australia is Canberra.,1
+420,101,50,element,3,The symbol of hydrogen is not H.,0
+421,143,71,element,3,The symbol of silver is not Ag.,0
+422,186,93,arith,0,18 plus 19 is not 35.,1
+423,6,3,capital,3,The capital city of Spain is Madrid.,1
+424,136,68,element,1,Fe is the symbol for iron.,1
+425,136,68,element,2,"On the periodic table, iron is written as Fe.",1
+426,277,138,arith,1,8 plus 18 does not equal 26.,0
+427,239,119,arith,1,16 plus 15 does not equal 31.,0
+428,70,35,capital,2,"In Ghana, the capital is Accra.",1
+429,168,84,element,2,"On the periodic table, bromine is written as Br.",1
+430,182,91,arith,1,12 plus 17 equals 29.,1
+431,78,39,capital,1,Jerusalem is not the capital city of Vietnam.,1
+432,143,71,element,2,"On the periodic table, silver is not written as Ag.",0
+433,233,116,arith,2,The sum of 5 plus 4 is not 9.,0
+434,2,1,capital,3,The capital city of Germany is Berlin.,1
+435,40,20,capital,3,The capital city of Iran is Tehran.,1
+436,183,91,arith,2,The sum of 12 plus 17 is not 29.,0
+437,163,81,element,1,Cr is not the symbol for chromium.,0
+438,125,62,element,0,The chemical symbol for phosphorus is not P.,0
+439,266,133,arith,2,The sum of 5 plus 4 is 9.,1
+440,165,82,element,1,Mn is not the symbol for manganese.,0
+441,19,9,capital,0,The capital of Kenya is not Nairobi.,0
+442,234,117,arith,0,5 plus 11 is 16.,1
+443,248,124,arith,3,"If you add 14 plus 4, you get 18.",1
+444,256,128,arith,1,7 plus 8 does not equal 18.,1
+445,42,21,capital,0,The capital of Iraq is Baghdad.,1
+446,170,85,element,1,H is not the symbol for tungsten.,1
+447,283,141,arith,1,3 plus 3 does not equal 6.,0
+448,142,71,element,2,"On the periodic table, silver is written as Ag.",1
+449,130,65,element,3,The symbol of argon is Ar.,1
+450,102,51,element,3,The symbol of helium is He.,1
+451,245,122,arith,3,"If you add 4 plus 15, you get 18.",0
+452,171,85,element,1,H is the symbol for tungsten.,0
+453,191,95,arith,1,17 plus 8 does not equal 25.,0
+454,14,7,capital,1,New Delhi is the capital city of India.,1
+455,180,90,arith,1,11 plus 7 equals 18.,1
+456,11,5,capital,0,The capital of Japan is not Tokyo.,0
+457,61,30,capital,2,"In Mexico, the capital is not Mexico City.",0
+458,114,57,element,1,Ne is the symbol for neon.,1
+459,111,55,element,2,"On the periodic table, oxygen is not written as O.",0
+460,59,29,capital,2,"In Denmark, the capital is not Copenhagen.",0
+461,49,24,capital,2,"In Austria, the capital is Buenos Aires.",0
+462,60,30,capital,0,The capital of Mexico is Mexico City.,1
+463,237,118,arith,3,"If you add 6 plus 4, you do not get 10.",0
+464,168,84,element,0,The chemical symbol for bromine is Br.,1
+465,225,112,arith,3,"If you add 16 plus 6, you do not get 22.",0
+466,213,106,arith,1,12 plus 19 does not equal 31.,0
+467,96,48,capital,0,The capital of Lebanon is Beirut.,1
+468,244,122,arith,2,The sum of 4 plus 15 is 19.,1
+469,251,125,arith,3,"If you add 10 plus 11, you do not get 21.",0
+470,62,31,capital,0,The capital of Argentina is not Bangkok.,1
+471,134,67,element,2,"On the periodic table, calcium is not written as Au.",1
+472,185,92,arith,0,16 plus 7 is not 23.,0
+473,175,87,element,2,"On the periodic table, boron is not written as B.",0
+474,96,48,capital,1,Beirut is the capital city of Lebanon.,1
+475,197,98,arith,3,"If you add 6 plus 18, you get 27.",0
+476,61,30,capital,0,The capital of Mexico is not Mexico City.,0
+477,200,100,arith,2,The sum of 6 plus 17 is 23.,1
+478,103,51,element,1,F is the symbol for helium.,0
+479,25,12,capital,1,Ottawa is not the capital city of Canada.,0
+480,278,139,arith,2,The sum of 6 plus 6 is 12.,1
+481,235,117,arith,2,The sum of 5 plus 11 is not 16.,0
+482,54,27,capital,2,"In Belgium, the capital is Brussels.",1
+483,200,100,arith,0,6 plus 17 is 23.,1
+484,67,33,capital,3,The capital city of Cuba is not Havana.,0
+485,163,81,element,3,The symbol of chromium is not Cr.,0
+486,164,82,element,0,The chemical symbol for manganese is Mn.,1
+487,81,40,capital,3,The capital city of Indonesia is Amman.,0
+488,78,39,capital,3,The capital city of Vietnam is not Jerusalem.,1
+489,286,143,arith,1,15 plus 7 equals 22.,1
+490,52,26,capital,0,The capital of Ireland is not Havana.,1
+491,216,108,arith,2,The sum of 8 plus 19 is 27.,1
+492,232,116,arith,2,The sum of 5 plus 4 is 9.,1
+493,126,63,element,1,S is the symbol for sulfur.,1
+494,142,71,element,1,Ag is the symbol for silver.,1
+495,98,49,capital,3,The capital city of Syria is not Beijing.,1
+496,234,117,arith,1,5 plus 11 equals 16.,1
+497,12,6,capital,0,The capital of China is Beijing.,1
+498,218,109,arith,1,2 plus 6 equals 8.,1
+499,69,34,capital,2,"In Nigeria, the capital is not Abuja.",0
+500,147,73,element,2,"On the periodic table, tin is not written as Sn.",0
+501,102,51,element,0,The chemical symbol for helium is He.,1
+502,153,76,element,3,The symbol of uranium is not U.,0
+503,141,70,element,1,Zn is not the symbol for zinc.,0
+504,93,46,capital,1,Jerusalem is not the capital city of Israel.,0
+505,2,1,capital,0,The capital of Germany is Berlin.,1
+506,38,19,capital,1,Ankara is the capital city of Turkey.,1
+507,255,127,arith,3,"If you add 7 plus 16, you do not get 23.",0
+508,242,121,arith,0,11 plus 15 is 26.,1
+509,79,39,capital,2,"In Vietnam, the capital is Jerusalem.",0
+510,7,3,capital,1,Lima is the capital city of Spain.,0
+511,40,20,capital,0,The capital of Iran is Tehran.,1
+512,152,76,element,2,"On the periodic table, uranium is written as U.",1
+513,275,137,arith,1,17 plus 18 does not equal 35.,0
+514,240,120,arith,0,12 plus 5 is 17.,1
+515,155,77,element,1,Pt is not the symbol for platinum.,0
+516,167,83,element,0,The chemical symbol for iodine is not I.,0
+517,162,81,element,2,"On the periodic table, chromium is written as Cr.",1
+518,105,52,element,1,Li is not the symbol for lithium.,0
+519,224,112,arith,0,16 plus 6 is 22.,1
+520,247,123,arith,1,10 plus 6 does not equal 16.,0
+521,290,145,arith,3,"If you add 10 plus 11, you do not get 24.",1
+522,160,80,element,1,Ti is the symbol for titanium.,1
+523,24,12,capital,3,The capital city of Canada is not Ankara.,1
+524,24,12,capital,2,"In Canada, the capital is not Ankara.",1
+525,151,75,element,0,The chemical symbol for mercury is Ti.,0
+526,270,135,arith,1,9 plus 15 equals 24.,1
+527,233,116,arith,1,5 plus 4 does not equal 9.,0
+528,133,66,element,1,Ag is the symbol for potassium.,0
+529,173,86,element,1,He is the symbol for barium.,0
+530,3,1,capital,3,The capital city of Germany is Cairo.,0
+531,162,81,element,1,Cr is the symbol for chromium.,1
+532,89,44,capital,2,"In Bangladesh, the capital is not Dhaka.",0
+533,225,112,arith,1,16 plus 6 does not equal 22.,0
+534,195,97,arith,1,15 plus 12 does not equal 27.,0
+535,199,99,arith,1,19 plus 15 does not equal 34.,0
+536,169,84,element,1,Br is not the symbol for bromine.,0
+537,141,70,element,0,The chemical symbol for zinc is not Zn.,0
+538,145,72,element,0,The chemical symbol for gold is not Au.,0
+539,296,148,arith,3,"If you add 11 plus 19, you get 30.",1
+540,232,116,arith,1,5 plus 4 equals 9.,1
+541,86,43,capital,1,Islamabad is the capital city of Pakistan.,1
+542,0,0,capital,3,The capital city of France is not New Delhi.,1
+543,132,66,element,2,"On the periodic table, potassium is written as K.",1
+544,278,139,arith,3,"If you add 6 plus 6, you get 12.",1
+545,63,31,capital,2,"In Argentina, the capital is not Buenos Aires.",0
+546,248,124,arith,1,14 plus 4 equals 18.,1
+547,290,145,arith,2,The sum of 10 plus 11 is not 24.,1
+548,291,145,arith,2,The sum of 10 plus 11 is not 21.,0
+549,265,132,arith,0,4 plus 16 is not 20.,0
+550,154,77,element,3,The symbol of platinum is Pt.,1
+551,247,123,arith,2,The sum of 10 plus 6 is not 16.,0
+552,99,49,capital,1,Damascus is not the capital city of Syria.,0
+553,109,54,element,1,N is not the symbol for nitrogen.,0
+554,82,41,capital,0,The capital of Philippines is Manila.,1
+555,285,142,arith,3,"If you add 11 plus 19, you do not get 30.",0
+556,139,69,element,3,The symbol of copper is not Cu.,0
+557,262,131,arith,3,"If you add 17 plus 18, you get 35.",1
+558,228,114,arith,0,19 plus 10 is 29.,1
+559,237,118,arith,2,The sum of 6 plus 4 is not 10.,0
+560,4,2,capital,3,The capital city of Italy is Rome.,1
+561,276,138,arith,3,"If you add 8 plus 18, you do not get 28.",1
+562,36,18,capital,2,"In Greece, the capital is Athens.",1
+563,224,112,arith,1,16 plus 6 equals 22.,1
+564,206,103,arith,3,"If you add 16 plus 19, you get 35.",1
+565,44,22,capital,0,The capital of Russia is Moscow.,1
+566,38,19,capital,2,"In Turkey, the capital is Ankara.",1
+567,199,99,arith,2,The sum of 19 plus 15 is not 34.,0
+568,19,9,capital,3,The capital city of Kenya is not Nairobi.,0
+569,95,47,capital,3,The capital city of Jordan is Lisbon.,0
+570,265,132,arith,3,"If you add 4 plus 16, you do not get 20.",0
+571,214,107,arith,1,17 plus 11 equals 28.,1
+572,162,81,element,0,The chemical symbol for chromium is Cr.,1
+573,53,26,capital,3,The capital city of Ireland is Havana.,0
+574,47,23,capital,3,The capital city of Ukraine is not Kyiv.,0
+575,129,64,element,2,"On the periodic table, chlorine is written as Cu.",0
+576,120,60,element,0,The chemical symbol for aluminium is Al.,1
+577,211,105,arith,2,The sum of 18 plus 5 is 22.,0
+578,286,143,arith,0,15 plus 7 is 22.,1
+579,91,45,capital,3,The capital city of Saudi Arabia is not Riyadh.,0
+580,204,102,arith,1,6 plus 5 equals 11.,1
+581,51,25,capital,1,Budapest is not the capital city of Hungary.,0
+582,282,141,arith,0,3 plus 3 is 6.,1
+583,139,69,element,0,The chemical symbol for copper is not Cu.,0
+584,294,147,arith,3,"If you add 10 plus 2, you get 12.",1
+585,168,84,element,1,Br is the symbol for bromine.,1
+586,247,123,arith,0,10 plus 6 is not 16.,0
+587,31,15,capital,1,Stockholm is not the capital city of Sweden.,0
+588,241,120,arith,3,"If you add 12 plus 5, you get 18.",0
+589,113,56,element,2,"On the periodic table, fluorine is not written as F.",0
+590,218,109,arith,3,"If you add 2 plus 6, you get 8.",1
+591,234,117,arith,2,The sum of 5 plus 11 is 16.,1
+592,13,6,capital,1,Beijing is not the capital city of China.,0
+593,18,9,capital,3,The capital city of Kenya is Nairobi.,1
+594,80,40,capital,3,The capital city of Indonesia is Jakarta.,1
+595,95,47,capital,2,"In Jordan, the capital is Lisbon.",0
+596,30,15,capital,0,The capital of Sweden is Stockholm.,1
+597,262,131,arith,0,17 plus 18 is 35.,1
+598,235,117,arith,3,"If you add 5 plus 11, you do not get 16.",0
+599,94,47,capital,0,The capital of Jordan is Amman.,1
+600,210,105,arith,1,18 plus 5 equals 23.,1
+601,271,135,arith,1,9 plus 15 does not equal 24.,0
+602,147,73,element,1,Sn is not the symbol for tin.,0
+603,92,46,capital,0,The capital of Israel is not Madrid.,1
+604,246,123,arith,0,10 plus 6 is 16.,1
+605,221,110,arith,3,"If you add 10 plus 14, you get 25.",0
+606,243,121,arith,2,The sum of 11 plus 15 is not 26.,0
+607,67,33,capital,1,Havana is not the capital city of Cuba.,0
+608,147,73,element,3,The symbol of tin is not Sn.,0
+609,28,14,capital,3,The capital city of Norway is Oslo.,1
+610,282,141,arith,2,The sum of 3 plus 3 is 6.,1
+611,132,66,element,1,K is the symbol for potassium.,1
+612,116,58,element,2,"On the periodic table, sodium is written as Na.",1
+613,287,143,arith,1,15 plus 7 does not equal 22.,0
+614,87,43,capital,1,Islamabad is not the capital city of Pakistan.,0
+615,72,36,capital,1,Islamabad is not the capital city of Ethiopia.,1
+616,189,94,arith,0,5 plus 5 is not 10.,0
+617,63,31,capital,0,The capital of Argentina is not Buenos Aires.,0
+618,259,129,arith,0,2 plus 19 is 19.,0
+619,65,32,capital,0,The capital of Colombia is not Bogota.,0
+620,48,24,capital,1,Buenos Aires is not the capital city of Austria.,1
+621,217,108,arith,3,"If you add 8 plus 19, you do not get 27.",0
+622,13,6,capital,3,The capital city of China is not Beijing.,0
+623,73,36,capital,2,"In Ethiopia, the capital is not Addis Ababa.",0
+624,48,24,capital,3,The capital city of Austria is not Buenos Aires.,1
+625,215,107,arith,2,The sum of 17 plus 11 is not 28.,0
+626,229,114,arith,3,"If you add 19 plus 10, you get 32.",0
+627,172,86,element,2,"On the periodic table, barium is written as Ba.",1
+628,40,20,capital,2,"In Iran, the capital is Tehran.",1
+629,279,139,arith,2,The sum of 6 plus 6 is 10.,0
+630,185,92,arith,2,The sum of 16 plus 7 is not 23.,0
+631,240,120,arith,1,12 plus 5 equals 17.,1
+632,6,3,capital,2,"In Spain, the capital is Madrid.",1
+633,70,35,capital,3,The capital city of Ghana is Accra.,1
+634,12,6,capital,2,"In China, the capital is Beijing.",1
+635,17,8,capital,1,Cairo is not the capital city of Egypt.,0
+636,6,3,capital,0,The capital of Spain is Madrid.,1
+637,248,124,arith,2,The sum of 14 plus 4 is 18.,1
+638,88,44,capital,0,The capital of Bangladesh is Dhaka.,1
+639,100,50,element,3,The symbol of hydrogen is H.,1
+640,276,138,arith,0,8 plus 18 is not 28.,1
+641,205,102,arith,2,The sum of 6 plus 5 is 12.,0
+642,97,48,capital,3,The capital city of Lebanon is not Beirut.,0
+643,7,3,capital,2,"In Spain, the capital is Lima.",0
+644,195,97,arith,0,15 plus 12 is not 27.,0
+645,36,18,capital,1,Athens is the capital city of Greece.,1
+646,179,89,element,1,Xe is not the symbol for xenon.,0
+647,4,2,capital,1,Rome is the capital city of Italy.,1
+648,56,28,capital,3,The capital city of Netherlands is Amsterdam.,1
+649,48,24,capital,0,The capital of Austria is not Buenos Aires.,1
+650,197,98,arith,2,The sum of 6 plus 18 is 27.,0
+651,128,64,element,2,"On the periodic table, chlorine is written as Cl.",1
+652,177,88,element,1,Kr is not the symbol for krypton.,0
+653,35,17,capital,0,The capital of Poland is not Warsaw.,0
+654,50,25,capital,0,The capital of Hungary is Budapest.,1
+655,65,32,capital,2,"In Colombia, the capital is not Bogota.",0
+656,119,59,element,2,"On the periodic table, magnesium is not written as Mg.",0
+657,261,130,arith,1,8 plus 13 does not equal 21.,0
+658,129,64,element,1,Cu is the symbol for chlorine.,0
+659,270,135,arith,2,The sum of 9 plus 15 is 24.,1
+660,228,114,arith,3,"If you add 19 plus 10, you get 29.",1
+661,35,17,capital,1,Warsaw is not the capital city of Poland.,0
+662,84,42,capital,2,"In Nepal, the capital is Kathmandu.",1
+663,241,120,arith,1,12 plus 5 equals 18.,0
+664,107,53,element,3,The symbol of carbon is Na.,0
+665,230,115,arith,3,"If you add 5 plus 18, you get 23.",1
+666,59,29,capital,3,The capital city of Denmark is not Copenhagen.,0
+667,281,140,arith,0,5 plus 7 is 13.,0
+668,266,133,arith,1,5 plus 4 equals 9.,1
+669,222,111,arith,3,"If you add 8 plus 13, you get 21.",1
+670,141,70,element,3,The symbol of zinc is not Zn.,0
+671,186,93,arith,1,18 plus 19 does not equal 35.,1
+672,275,137,arith,0,17 plus 18 is not 35.,0
+673,43,21,capital,2,"In Iraq, the capital is not Baghdad.",0
+674,16,8,capital,0,The capital of Egypt is Cairo.,1
+675,103,51,element,3,The symbol of helium is F.,0
+676,32,16,capital,2,"In Finland, the capital is Helsinki.",1
+677,50,25,capital,2,"In Hungary, the capital is Budapest.",1
+678,203,101,arith,0,18 plus 2 is not 20.,0
+679,23,11,capital,1,Santiago is not the capital city of Chile.,0
+680,81,40,capital,2,"In Indonesia, the capital is Amman.",0
+681,117,58,element,0,The chemical symbol for sodium is not Na.,0
+682,108,54,element,2,"On the periodic table, nitrogen is written as N.",1
+683,155,77,element,2,"On the periodic table, platinum is not written as Pt.",0
+684,50,25,capital,3,The capital city of Hungary is Budapest.,1
+685,191,95,arith,0,17 plus 8 is not 25.,0
+686,10,5,capital,1,Tokyo is the capital city of Japan.,1
+687,79,39,capital,0,The capital of Vietnam is Jerusalem.,0
+688,175,87,element,1,B is not the symbol for boron.,0
+689,235,117,arith,0,5 plus 11 is not 16.,0
+690,268,134,arith,3,"If you add 7 plus 5, you get 12.",1
+691,50,25,capital,1,Budapest is the capital city of Hungary.,1
+692,258,129,arith,3,"If you add 2 plus 19, you get 21.",1
+693,174,87,element,3,The symbol of boron is B.,1
+694,223,111,arith,0,8 plus 13 is not 21.,0
+695,178,89,element,1,Xe is the symbol for xenon.,1
+696,77,38,capital,2,"In Thailand, the capital is not Bangkok.",0
+697,131,65,element,3,The symbol of argon is Zn.,0
+698,209,104,arith,1,9 plus 16 equals 24.,0
+699,201,100,arith,3,"If you add 6 plus 17, you get 20.",0
+700,288,144,arith,0,9 plus 9 is 18.,1
+701,297,148,arith,1,11 plus 19 equals 28.,0
+702,262,131,arith,2,The sum of 17 plus 18 is 35.,1
+703,151,75,element,3,The symbol of mercury is Ti.,0
+704,255,127,arith,0,7 plus 16 is not 23.,0
+705,281,140,arith,1,5 plus 7 equals 13.,0
+706,271,135,arith,3,"If you add 9 plus 15, you do not get 24.",0
+707,136,68,element,3,The symbol of iron is Fe.,1
+708,183,91,arith,0,12 plus 17 is not 29.,0
+709,3,1,capital,0,The capital of Germany is Cairo.,0
+710,212,106,arith,0,12 plus 19 is 31.,1
+711,90,45,capital,1,Riyadh is the capital city of Saudi Arabia.,1
+712,287,143,arith,2,The sum of 15 plus 7 is not 22.,0
+713,227,113,arith,3,"If you add 6 plus 19, you get 27.",0
+714,207,103,arith,0,16 plus 19 is not 35.,0
+715,56,28,capital,0,The capital of Netherlands is Amsterdam.,1
+716,194,97,arith,0,15 plus 12 is 27.,1
+717,257,128,arith,2,The sum of 7 plus 8 is not 15.,0
+718,296,148,arith,2,The sum of 11 plus 19 is 30.,1
+719,78,39,capital,0,The capital of Vietnam is not Jerusalem.,1
+720,242,121,arith,3,"If you add 11 plus 15, you get 26.",1
+721,21,10,capital,1,Lima is not the capital city of Peru.,0
+722,139,69,element,1,Cu is not the symbol for copper.,0
+723,144,72,element,3,The symbol of gold is Au.,1
+724,185,92,arith,3,"If you add 16 plus 7, you do not get 23.",0
+725,258,129,arith,2,The sum of 2 plus 19 is 21.,1
+726,25,12,capital,3,The capital city of Canada is not Ottawa.,0
+727,268,134,arith,1,7 plus 5 equals 12.,1
+728,249,124,arith,1,14 plus 4 does not equal 18.,0
+729,11,5,capital,2,"In Japan, the capital is not Tokyo.",0
+730,114,57,element,2,"On the periodic table, neon is written as Ne.",1
+731,283,141,arith,3,"If you add 3 plus 3, you do not get 6.",0
+732,231,115,arith,0,5 plus 18 is not 23.,0
+733,242,121,arith,2,The sum of 11 plus 15 is 26.,1
+734,22,11,capital,1,Santiago is the capital city of Chile.,1
+735,59,29,capital,1,Copenhagen is not the capital city of Denmark.,0
+736,2,1,capital,1,Berlin is the capital city of Germany.,1
+737,292,146,arith,3,"If you add 3 plus 10, you get 13.",1
+738,34,17,capital,3,The capital city of Poland is Warsaw.,1
+739,130,65,element,1,Ar is the symbol for argon.,1
+740,31,15,capital,0,The capital of Sweden is not Stockholm.,0
+741,152,76,element,0,The chemical symbol for uranium is U.,1
+742,127,63,element,0,The chemical symbol for sulfur is not S.,0
+743,146,73,element,1,Sn is the symbol for tin.,1
+744,177,88,element,3,The symbol of krypton is not Kr.,0
+745,150,75,element,2,"On the periodic table, mercury is written as Hg.",1
+746,164,82,element,2,"On the periodic table, manganese is written as Mn.",1
+747,268,134,arith,2,The sum of 7 plus 5 is 12.,1
+748,192,96,arith,1,15 plus 5 equals 20.,1
+749,129,64,element,0,The chemical symbol for chlorine is Cu.,0
+750,180,90,arith,3,"If you add 11 plus 7, you get 18.",1
+751,299,149,arith,2,The sum of 8 plus 10 is not 18.,0
+752,97,48,capital,2,"In Lebanon, the capital is not Beirut.",0
+753,102,51,element,1,He is the symbol for helium.,1
+754,120,60,element,3,The symbol of aluminium is Al.,1
+755,147,73,element,0,The chemical symbol for tin is not Sn.,0
+756,108,54,element,3,The symbol of nitrogen is N.,1
+757,202,101,arith,1,18 plus 2 equals 20.,1
+758,246,123,arith,2,The sum of 10 plus 6 is 16.,1
+759,202,101,arith,2,The sum of 18 plus 2 is 20.,1
+760,76,38,capital,2,"In Thailand, the capital is Bangkok.",1
+761,99,49,capital,2,"In Syria, the capital is not Damascus.",0
+762,30,15,capital,3,The capital city of Sweden is Stockholm.,1
+763,207,103,arith,3,"If you add 16 plus 19, you do not get 35.",0
+764,28,14,capital,0,The capital of Norway is Oslo.,1
+765,244,122,arith,3,"If you add 4 plus 15, you get 19.",1
+766,143,71,element,1,Ag is not the symbol for silver.,0
+767,227,113,arith,2,The sum of 6 plus 19 is 27.,0
+768,19,9,capital,1,Nairobi is not the capital city of Kenya.,0
+769,46,23,capital,0,The capital of Ukraine is not Mexico City.,1
+770,232,116,arith,0,5 plus 4 is 9.,1
+771,118,59,element,1,Cl is not the symbol for magnesium.,1
+772,170,85,element,0,The chemical symbol for tungsten is not H.,1
+773,110,55,element,1,Al is not the symbol for oxygen.,1
+774,294,147,arith,1,10 plus 2 equals 12.,1
+775,104,52,element,2,"On the periodic table, lithium is written as Li.",1
+776,161,80,element,3,The symbol of titanium is W.,0
+777,51,25,capital,0,The capital of Hungary is not Budapest.,0
+778,172,86,element,0,The chemical symbol for barium is Ba.,1
+779,87,43,capital,2,"In Pakistan, the capital is not Islamabad.",0
+780,71,35,capital,2,"In Ghana, the capital is not Accra.",0
+781,110,55,element,0,The chemical symbol for oxygen is not Al.,1
+782,97,48,capital,1,Beirut is not the capital city of Lebanon.,0
+783,111,55,element,1,O is not the symbol for oxygen.,0
+784,90,45,capital,3,The capital city of Saudi Arabia is Riyadh.,1
+785,32,16,capital,1,Helsinki is the capital city of Finland.,1
+786,134,67,element,1,Au is not the symbol for calcium.,1
+787,47,23,capital,1,Kyiv is not the capital city of Ukraine.,0
+788,203,101,arith,2,The sum of 18 plus 2 is not 20.,0
+789,205,102,arith,1,6 plus 5 equals 12.,0
+790,93,46,capital,2,"In Israel, the capital is not Jerusalem.",0
+791,34,17,capital,1,Warsaw is the capital city of Poland.,1
+792,110,55,element,2,"On the periodic table, oxygen is not written as Al.",1
+793,80,40,capital,2,"In Indonesia, the capital is Jakarta.",1
+794,251,125,arith,0,10 plus 11 is not 21.,0
+795,39,19,capital,0,The capital of Turkey is not Ankara.,0
+796,195,97,arith,3,"If you add 15 plus 12, you do not get 27.",0
+797,42,21,capital,3,The capital city of Iraq is Baghdad.,1
+798,180,90,arith,0,11 plus 7 is 18.,1
+799,255,127,arith,1,7 plus 16 does not equal 23.,0
+800,181,90,arith,3,"If you add 11 plus 7, you get 17.",0
+801,160,80,element,0,The chemical symbol for titanium is Ti.,1
+802,60,30,capital,3,The capital city of Mexico is Mexico City.,1
+803,27,13,capital,3,The capital city of Australia is Tehran.,0
+804,238,119,arith,2,The sum of 16 plus 15 is 31.,1
+805,55,27,capital,2,"In Belgium, the capital is not Brussels.",0
+806,91,45,capital,1,Riyadh is not the capital city of Saudi Arabia.,0
+807,252,126,arith,3,"If you add 18 plus 2, you get 20.",1
+808,131,65,element,1,Zn is the symbol for argon.,0
+809,116,58,element,1,Na is the symbol for sodium.,1
+810,59,29,capital,0,The capital of Denmark is not Copenhagen.,0
+811,202,101,arith,3,"If you add 18 plus 2, you get 20.",1
+812,86,43,capital,2,"In Pakistan, the capital is Islamabad.",1
+813,204,102,arith,3,"If you add 6 plus 5, you get 11.",1
+814,219,109,arith,1,2 plus 6 equals 5.,0
+815,95,47,capital,0,The capital of Jordan is Lisbon.,0
+816,193,96,arith,1,15 plus 5 does not equal 20.,0
+817,271,135,arith,0,9 plus 15 is not 24.,0
+818,118,59,element,2,"On the periodic table, magnesium is not written as Cl.",1
+819,278,139,arith,0,6 plus 6 is 12.,1
+820,1,0,capital,0,The capital of France is not Paris.,0
+821,69,34,capital,1,Abuja is not the capital city of Nigeria.,0
+822,18,9,capital,2,"In Kenya, the capital is Nairobi.",1
+823,13,6,capital,0,The capital of China is not Beijing.,0
+824,140,70,element,0,The chemical symbol for zinc is Zn.,1
+825,277,138,arith,3,"If you add 8 plus 18, you do not get 26.",0
+826,284,142,arith,3,"If you add 11 plus 19, you do not get 33.",1
+827,179,89,element,3,The symbol of xenon is not Xe.,0
+828,268,134,arith,0,7 plus 5 is 12.,1
+829,30,15,capital,2,"In Sweden, the capital is Stockholm.",1
+830,52,26,capital,3,The capital city of Ireland is not Havana.,1
+831,293,146,arith,2,The sum of 3 plus 10 is not 13.,0
+832,45,22,capital,0,The capital of Russia is Copenhagen.,0
+833,276,138,arith,2,The sum of 8 plus 18 is not 28.,1
+834,24,12,capital,1,Ankara is not the capital city of Canada.,1
+835,27,13,capital,0,The capital of Australia is Tehran.,0
+836,34,17,capital,2,"In Poland, the capital is Warsaw.",1
+837,187,93,arith,3,"If you add 18 plus 19, you do not get 37.",0
+838,109,54,element,0,The chemical symbol for nitrogen is not N.,0
+839,155,77,element,0,The chemical symbol for platinum is not Pt.,0
+840,112,56,element,1,Si is not the symbol for fluorine.,1
+841,21,10,capital,0,The capital of Peru is not Lima.,0
+842,105,52,element,3,The symbol of lithium is not Li.,0
+843,36,18,capital,0,The capital of Greece is Athens.,1
+844,181,90,arith,1,11 plus 7 equals 17.,0
+845,260,130,arith,3,"If you add 8 plus 13, you get 21.",1
+846,212,106,arith,2,The sum of 12 plus 19 is 31.,1
+847,153,76,element,0,The chemical symbol for uranium is not U.,0
+848,158,79,element,2,"On the periodic table, cobalt is written as Co.",1
+849,280,140,arith,3,"If you add 5 plus 7, you get 12.",1
+850,73,36,capital,1,Addis Ababa is not the capital city of Ethiopia.,0
+851,188,94,arith,3,"If you add 5 plus 5, you get 10.",1
+852,247,123,arith,3,"If you add 10 plus 6, you do not get 16.",0
+853,82,41,capital,1,Manila is the capital city of Philippines.,1
+854,45,22,capital,3,The capital city of Russia is Copenhagen.,0
+855,68,34,capital,0,The capital of Nigeria is Abuja.,1
+856,239,119,arith,2,The sum of 16 plus 15 is not 31.,0
+857,205,102,arith,0,6 plus 5 is 12.,0
+858,156,78,element,1,Ni is the symbol for nickel.,1
+859,25,12,capital,2,"In Canada, the capital is not Ottawa.",0
+860,31,15,capital,2,"In Sweden, the capital is not Stockholm.",0
+861,67,33,capital,0,The capital of Cuba is not Havana.,0
+862,20,10,capital,3,The capital city of Peru is not Warsaw.,1
+863,174,87,element,0,The chemical symbol for boron is B.,1
+864,272,136,arith,2,The sum of 14 plus 16 is not 29.,1
+865,16,8,capital,3,The capital city of Egypt is Cairo.,1
+866,33,16,capital,3,The capital city of Finland is Kyiv.,0
+867,252,126,arith,0,18 plus 2 is 20.,1
+868,175,87,element,3,The symbol of boron is not B.,0
+869,124,62,element,2,"On the periodic table, phosphorus is written as P.",1
+870,85,42,capital,3,The capital city of Nepal is Damascus.,0
+871,119,59,element,0,The chemical symbol for magnesium is not Mg.,0
+872,280,140,arith,1,5 plus 7 equals 12.,1
+873,9,4,capital,0,The capital of Portugal is not Lisbon.,0
+874,124,62,element,3,The symbol of phosphorus is P.,1
+875,215,107,arith,3,"If you add 17 plus 11, you do not get 28.",0
+876,269,134,arith,2,The sum of 7 plus 5 is not 12.,0
+877,244,122,arith,0,4 plus 15 is 19.,1
+878,297,148,arith,3,"If you add 11 plus 19, you get 28.",0
+879,61,30,capital,3,The capital city of Mexico is not Mexico City.,0
+880,20,10,capital,0,The capital of Peru is not Warsaw.,1
+881,233,116,arith,3,"If you add 5 plus 4, you do not get 9.",0
+882,100,50,element,1,H is the symbol for hydrogen.,1
+883,33,16,capital,0,The capital of Finland is Kyiv.,0
+884,6,3,capital,1,Madrid is the capital city of Spain.,1
+885,264,132,arith,3,"If you add 4 plus 16, you do not get 23.",1
+886,281,140,arith,2,The sum of 5 plus 7 is 13.,0
+887,107,53,element,2,"On the periodic table, carbon is written as Na.",0
+888,44,22,capital,3,The capital city of Russia is Moscow.,1
+889,41,20,capital,1,Brussels is the capital city of Iran.,0
+890,128,64,element,3,The symbol of chlorine is Cl.,1
+891,26,13,capital,2,"In Australia, the capital is Canberra.",1
+892,107,53,element,0,The chemical symbol for carbon is Na.,0
+893,15,7,capital,3,The capital city of India is not New Delhi.,0
+894,62,31,capital,1,Bangkok is not the capital city of Argentina.,1
+895,151,75,element,2,"On the periodic table, mercury is written as Ti.",0
+896,160,80,element,2,"On the periodic table, titanium is written as Ti.",1
+897,63,31,capital,1,Buenos Aires is not the capital city of Argentina.,0
+898,63,31,capital,3,The capital city of Argentina is not Buenos Aires.,0
+899,118,59,element,3,The symbol of magnesium is not Cl.,1
+900,249,124,arith,3,"If you add 14 plus 4, you do not get 18.",0
+901,182,91,arith,0,12 plus 17 is 29.,1
+902,216,108,arith,1,8 plus 19 equals 27.,1
+903,72,36,capital,2,"In Ethiopia, the capital is not Islamabad.",1
+904,139,69,element,2,"On the periodic table, copper is not written as Cu.",0
+905,94,47,capital,1,Amman is the capital city of Jordan.,1
+906,258,129,arith,1,2 plus 19 equals 21.,1
+907,233,116,arith,0,5 plus 4 is not 9.,0
+908,119,59,element,3,The symbol of magnesium is not Mg.,0
+909,22,11,capital,0,The capital of Chile is Santiago.,1
+910,274,137,arith,0,17 plus 18 is 35.,1
+911,239,119,arith,3,"If you add 16 plus 15, you do not get 31.",0
+912,154,77,element,0,The chemical symbol for platinum is Pt.,1
+913,236,118,arith,1,6 plus 4 equals 10.,1
+914,53,26,capital,2,"In Ireland, the capital is Havana.",0
+915,35,17,capital,2,"In Poland, the capital is not Warsaw.",0
+916,83,41,capital,2,"In Philippines, the capital is Beirut.",0
+917,192,96,arith,3,"If you add 15 plus 5, you get 20.",1
+918,99,49,capital,3,The capital city of Syria is not Damascus.,0
+919,131,65,element,2,"On the periodic table, argon is written as Zn.",0
+920,213,106,arith,3,"If you add 12 plus 19, you do not get 31.",0
+921,64,32,capital,0,The capital of Colombia is Bogota.,1
+922,204,102,arith,0,6 plus 5 is 11.,1
+923,57,28,capital,1,Accra is the capital city of Netherlands.,0
+924,17,8,capital,0,The capital of Egypt is not Cairo.,0
+925,274,137,arith,1,17 plus 18 equals 35.,1
+926,250,125,arith,2,The sum of 10 plus 11 is 21.,1
+927,230,115,arith,0,5 plus 18 is 23.,1
+928,113,56,element,1,F is not the symbol for fluorine.,0
+929,182,91,arith,2,The sum of 12 plus 17 is 29.,1
+930,123,61,element,1,Si is not the symbol for silicon.,0
+931,29,14,capital,2,"In Norway, the capital is Baghdad.",0
+932,228,114,arith,2,The sum of 19 plus 10 is 29.,1
+933,209,104,arith,0,9 plus 16 is 24.,0
+934,262,131,arith,1,17 plus 18 equals 35.,1
+935,148,74,element,3,The symbol of lead is Pb.,1
+936,45,22,capital,1,Copenhagen is the capital city of Russia.,0
+937,158,79,element,0,The chemical symbol for cobalt is Co.,1
+938,153,76,element,1,U is not the symbol for uranium.,0
+939,177,88,element,2,"On the periodic table, krypton is not written as Kr.",0
+940,128,64,element,1,Cl is the symbol for chlorine.,1
+941,115,57,element,1,P is the symbol for neon.,0
+942,275,137,arith,2,The sum of 17 plus 18 is not 35.,0
+943,245,122,arith,1,4 plus 15 equals 18.,0
+944,124,62,element,1,P is the symbol for phosphorus.,1
+945,158,79,element,3,The symbol of cobalt is Co.,1
+946,299,149,arith,0,8 plus 10 is not 18.,0
+947,210,105,arith,3,"If you add 18 plus 5, you get 23.",1
+948,35,17,capital,3,The capital city of Poland is not Warsaw.,0
+949,57,28,capital,0,The capital of Netherlands is Accra.,0
+950,86,43,capital,0,The capital of Pakistan is Islamabad.,1
+951,254,127,arith,0,7 plus 16 is 23.,1
+952,46,23,capital,3,The capital city of Ukraine is not Mexico City.,1
+953,284,142,arith,2,The sum of 11 plus 19 is not 33.,1
+954,49,24,capital,3,The capital city of Austria is Buenos Aires.,0
+955,58,29,capital,2,"In Denmark, the capital is not Addis Ababa.",1
+956,253,126,arith,0,18 plus 2 is 17.,0
+957,41,20,capital,0,The capital of Iran is Brussels.,0
+958,236,118,arith,0,6 plus 4 is 10.,1
+959,296,148,arith,0,11 plus 19 is 30.,1
+960,155,77,element,3,The symbol of platinum is not Pt.,0
+961,157,78,element,1,Ni is not the symbol for nickel.,0
+962,124,62,element,0,The chemical symbol for phosphorus is P.,1
+963,81,40,capital,0,The capital of Indonesia is Amman.,0
+964,10,5,capital,2,"In Japan, the capital is Tokyo.",1
+965,130,65,element,2,"On the periodic table, argon is written as Ar.",1
+966,93,46,capital,3,The capital city of Israel is not Jerusalem.,0
+967,144,72,element,2,"On the periodic table, gold is written as Au.",1
+968,5,2,capital,1,Nairobi is the capital city of Italy.,0
+969,226,113,arith,1,6 plus 19 equals 25.,1
+970,278,139,arith,1,6 plus 6 equals 12.,1
+971,298,149,arith,3,"If you add 8 plus 10, you get 18.",1
+972,140,70,element,2,"On the periodic table, zinc is written as Zn.",1
+973,74,37,capital,1,Rabat is the capital city of Morocco.,1
+974,173,86,element,3,The symbol of barium is He.,0
+975,285,142,arith,2,The sum of 11 plus 19 is not 30.,0
+976,270,135,arith,3,"If you add 9 plus 15, you get 24.",1
+977,217,108,arith,1,8 plus 19 does not equal 27.,0
+978,106,53,element,3,The symbol of carbon is C.,1
+979,198,99,arith,3,"If you add 19 plus 15, you get 34.",1
+980,112,56,element,0,The chemical symbol for fluorine is not Si.,1
+981,259,129,arith,2,The sum of 2 plus 19 is 19.,0
+982,220,110,arith,0,10 plus 14 is not 25.,1
+983,267,133,arith,2,The sum of 5 plus 4 is not 9.,0
+984,93,46,capital,0,The capital of Israel is not Jerusalem.,0
+985,227,113,arith,1,6 plus 19 equals 27.,0
+986,16,8,capital,2,"In Egypt, the capital is Cairo.",1
+987,18,9,capital,0,The capital of Kenya is Nairobi.,1
+988,242,121,arith,1,11 plus 15 equals 26.,1
+989,135,67,element,2,"On the periodic table, calcium is not written as Ca.",0
+990,107,53,element,1,Na is the symbol for carbon.,0
+991,157,78,element,3,The symbol of nickel is not Ni.,0
+992,214,107,arith,2,The sum of 17 plus 11 is 28.,1
+993,205,102,arith,3,"If you add 6 plus 5, you get 12.",0
+994,254,127,arith,3,"If you add 7 plus 16, you get 23.",1
+995,121,60,element,0,The chemical symbol for aluminium is not Al.,0
+996,229,114,arith,0,19 plus 10 is 32.,0
+997,206,103,arith,2,The sum of 16 plus 19 is 35.,1
+998,266,133,arith,0,5 plus 4 is 9.,1
+999,243,121,arith,3,"If you add 11 plus 15, you do not get 26.",0
+1000,130,65,element,0,The chemical symbol for argon is Ar.,1
+1001,58,29,capital,1,Addis Ababa is not the capital city of Denmark.,1
+1002,191,95,arith,3,"If you add 17 plus 8, you do not get 25.",0
+1003,65,32,capital,3,The capital city of Colombia is not Bogota.,0
+1004,133,66,element,2,"On the periodic table, potassium is written as Ag.",0
+1005,251,125,arith,2,The sum of 10 plus 11 is not 21.,0
+1006,28,14,capital,2,"In Norway, the capital is Oslo.",1
+1007,37,18,capital,2,"In Greece, the capital is not Athens.",0
+1008,231,115,arith,2,The sum of 5 plus 18 is not 23.,0
+1009,226,113,arith,3,"If you add 6 plus 19, you get 25.",1
+1010,10,5,capital,3,The capital city of Japan is Tokyo.,1
+1011,231,115,arith,3,"If you add 5 plus 18, you do not get 23.",0
+1012,198,99,arith,0,19 plus 15 is 34.,1
+1013,9,4,capital,3,The capital city of Portugal is not Lisbon.,0
+1014,43,21,capital,1,Baghdad is not the capital city of Iraq.,0
+1015,0,0,capital,0,The capital of France is not New Delhi.,1
+1016,149,74,element,0,The chemical symbol for lead is not Pb.,0
+1017,75,37,capital,1,Rabat is not the capital city of Morocco.,0
+1018,212,106,arith,1,12 plus 19 equals 31.,1
+1019,104,52,element,1,Li is the symbol for lithium.,1
+1020,106,53,element,2,"On the periodic table, carbon is written as C.",1
+1021,5,2,capital,3,The capital city of Italy is Nairobi.,0
+1022,41,20,capital,2,"In Iran, the capital is Brussels.",0
+1023,96,48,capital,3,The capital city of Lebanon is Beirut.,1
+1024,239,119,arith,0,16 plus 15 is not 31.,0
+1025,26,13,capital,3,The capital city of Australia is Canberra.,1
+1026,75,37,capital,3,The capital city of Morocco is not Rabat.,0
+1027,129,64,element,3,The symbol of chlorine is Cu.,0
+1028,11,5,capital,3,The capital city of Japan is not Tokyo.,0
+1029,261,130,arith,2,The sum of 8 plus 13 is not 21.,0
+1030,186,93,arith,3,"If you add 18 plus 19, you do not get 35.",1
+1031,195,97,arith,2,The sum of 15 plus 12 is not 27.,0
+1032,223,111,arith,2,The sum of 8 plus 13 is not 21.,0
+1033,215,107,arith,1,17 plus 11 does not equal 28.,0
+1034,217,108,arith,0,8 plus 19 is not 27.,0
+1035,149,74,element,3,The symbol of lead is not Pb.,0
+1036,3,1,capital,2,"In Germany, the capital is Cairo.",0
+1037,213,106,arith,0,12 plus 19 is not 31.,0
+1038,55,27,capital,3,The capital city of Belgium is not Brussels.,0
+1039,249,124,arith,2,The sum of 14 plus 4 is not 18.,0
+1040,284,142,arith,0,11 plus 19 is not 33.,1
+1041,29,14,capital,1,Baghdad is the capital city of Norway.,0
+1042,298,149,arith,1,8 plus 10 equals 18.,1
+1043,264,132,arith,0,4 plus 16 is not 23.,1
+1044,32,16,capital,3,The capital city of Finland is Helsinki.,1
+1045,122,61,element,2,"On the periodic table, silicon is not written as K.",1
+1046,108,54,element,1,N is the symbol for nitrogen.,1
+1047,263,131,arith,2,The sum of 17 plus 18 is not 35.,0
+1048,187,93,arith,0,18 plus 19 is not 37.,0
+1049,126,63,element,0,The chemical symbol for sulfur is S.,1
+1050,191,95,arith,2,The sum of 17 plus 8 is not 25.,0
+1051,103,51,element,2,"On the periodic table, helium is written as F.",0
+1052,208,104,arith,1,9 plus 16 equals 25.,1
+1053,156,78,element,0,The chemical symbol for nickel is Ni.,1
+1054,169,84,element,0,The chemical symbol for bromine is not Br.,0
+1055,135,67,element,1,Ca is not the symbol for calcium.,0
+1056,179,89,element,2,"On the periodic table, xenon is not written as Xe.",0
+1057,253,126,arith,1,18 plus 2 equals 17.,0
+1058,161,80,element,1,W is the symbol for titanium.,0
+1059,126,63,element,3,The symbol of sulfur is S.,1
+1060,40,20,capital,1,Tehran is the capital city of Iran.,1
+1061,267,133,arith,3,"If you add 5 plus 4, you do not get 9.",0
+1062,1,0,capital,2,"In France, the capital is not Paris.",0
+1063,1,0,capital,1,Paris is not the capital city of France.,0
+1064,289,144,arith,0,9 plus 9 is not 18.,0
+1065,58,29,capital,3,The capital city of Denmark is not Addis Ababa.,1
+1066,112,56,element,2,"On the periodic table, fluorine is not written as Si.",1
+1067,57,28,capital,2,"In Netherlands, the capital is Accra.",0
+1068,136,68,element,0,The chemical symbol for iron is Fe.,1
+1069,152,76,element,1,U is the symbol for uranium.,1
+1070,46,23,capital,2,"In Ukraine, the capital is not Mexico City.",1
+1071,127,63,element,2,"On the periodic table, sulfur is not written as S.",0
+1072,295,147,arith,3,"If you add 10 plus 2, you get 14.",0
+1073,202,101,arith,0,18 plus 2 is 20.,1
+1074,219,109,arith,0,2 plus 6 is 5.,0
+1075,221,110,arith,1,10 plus 14 equals 25.,0
+1076,196,98,arith,0,6 plus 18 is 24.,1
+1077,229,114,arith,2,The sum of 19 plus 10 is 32.,0
+1078,266,133,arith,3,"If you add 5 plus 4, you get 9.",1
+1079,286,143,arith,2,The sum of 15 plus 7 is 22.,1
+1080,37,18,capital,0,The capital of Greece is not Athens.,0
+1081,68,34,capital,1,Abuja is the capital city of Nigeria.,1
+1082,55,27,capital,1,Brussels is not the capital city of Belgium.,0
+1083,293,146,arith,3,"If you add 3 plus 10, you do not get 13.",0
+1084,294,147,arith,2,The sum of 10 plus 2 is 12.,1
+1085,298,149,arith,2,The sum of 8 plus 10 is 18.,1
+1086,272,136,arith,3,"If you add 14 plus 16, you do not get 29.",1
+1087,214,107,arith,3,"If you add 17 plus 11, you get 28.",1
+1088,9,4,capital,2,"In Portugal, the capital is not Lisbon.",0
+1089,84,42,capital,0,The capital of Nepal is Kathmandu.,1
+1090,166,83,element,2,"On the periodic table, iodine is written as I.",1
+1091,78,39,capital,2,"In Vietnam, the capital is not Jerusalem.",1
+1092,103,51,element,0,The chemical symbol for helium is F.,0
+1093,256,128,arith,0,7 plus 8 is not 18.,1
+1094,167,83,element,3,The symbol of iodine is not I.,0
+1095,77,38,capital,3,The capital city of Thailand is not Bangkok.,0
+1096,291,145,arith,1,10 plus 11 does not equal 21.,0
+1097,201,100,arith,1,6 plus 17 equals 20.,0
+1098,209,104,arith,3,"If you add 9 plus 16, you get 24.",0
+1099,11,5,capital,1,Tokyo is not the capital city of Japan.,0
+1100,223,111,arith,3,"If you add 8 plus 13, you do not get 21.",0
+1101,22,11,capital,3,The capital city of Chile is Santiago.,1
+1102,270,135,arith,0,9 plus 15 is 24.,1
+1103,244,122,arith,1,4 plus 15 equals 19.,1
+1104,70,35,capital,0,The capital of Ghana is Accra.,1
+1105,208,104,arith,3,"If you add 9 plus 16, you get 25.",1
+1106,3,1,capital,1,Cairo is the capital city of Germany.,0
+1107,85,42,capital,1,Damascus is the capital city of Nepal.,0
+1108,46,23,capital,1,Mexico City is not the capital city of Ukraine.,1
+1109,68,34,capital,3,The capital city of Nigeria is Abuja.,1
+1110,62,31,capital,3,The capital city of Argentina is not Bangkok.,1
+1111,273,136,arith,2,The sum of 14 plus 16 is 29.,0
+1112,188,94,arith,2,The sum of 5 plus 5 is 10.,1
+1113,265,132,arith,2,The sum of 4 plus 16 is not 20.,0
+1114,123,61,element,3,The symbol of silicon is not Si.,0
+1115,12,6,capital,3,The capital city of China is Beijing.,1
+1116,41,20,capital,3,The capital city of Iran is Brussels.,0
+1117,157,78,element,0,The chemical symbol for nickel is not Ni.,0
+1118,193,96,arith,2,The sum of 15 plus 5 is not 20.,0
+1119,201,100,arith,0,6 plus 17 is 20.,0
+1120,132,66,element,3,The symbol of potassium is K.,1
+1121,282,141,arith,3,"If you add 3 plus 3, you get 6.",1
+1122,33,16,capital,1,Kyiv is the capital city of Finland.,0
+1123,211,105,arith,1,18 plus 5 equals 22.,0
+1124,171,85,element,0,The chemical symbol for tungsten is H.,0
+1125,54,27,capital,0,The capital of Belgium is Brussels.,1
+1126,69,34,capital,0,The capital of Nigeria is not Abuja.,0
+1127,49,24,capital,0,The capital of Austria is Buenos Aires.,0
+1128,193,96,arith,3,"If you add 15 plus 5, you do not get 20.",0
+1129,220,110,arith,2,The sum of 10 plus 14 is not 25.,1
+1130,98,49,capital,1,Beijing is not the capital city of Syria.,1
+1131,255,127,arith,2,The sum of 7 plus 16 is not 23.,0
+1132,192,96,arith,0,15 plus 5 is 20.,1
+1133,14,7,capital,3,The capital city of India is New Delhi.,1
+1134,144,72,element,0,The chemical symbol for gold is Au.,1
+1135,148,74,element,2,"On the periodic table, lead is written as Pb.",1
+1136,188,94,arith,1,5 plus 5 equals 10.,1
+1137,8,4,capital,1,Lisbon is the capital city of Portugal.,1
+1138,251,125,arith,1,10 plus 11 does not equal 21.,0
+1139,72,36,capital,3,The capital city of Ethiopia is not Islamabad.,1
+1140,190,95,arith,3,"If you add 17 plus 8, you get 25.",1
+1141,104,52,element,3,The symbol of lithium is Li.,1
+1142,44,22,capital,1,Moscow is the capital city of Russia.,1
+1143,146,73,element,3,The symbol of tin is Sn.,1
+1144,0,0,capital,2,"In France, the capital is not New Delhi.",1
+1145,277,138,arith,2,The sum of 8 plus 18 is not 26.,0
+1146,253,126,arith,3,"If you add 18 plus 2, you get 17.",0
+1147,7,3,capital,3,The capital city of Spain is Lima.,0
+1148,137,68,element,0,The chemical symbol for iron is not Fe.,0
+1149,64,32,capital,1,Bogota is the capital city of Colombia.,1
+1150,194,97,arith,3,"If you add 15 plus 12, you get 27.",1
+1151,112,56,element,3,The symbol of fluorine is not Si.,1
+1152,171,85,element,3,The symbol of tungsten is H.,0
+1153,178,89,element,3,The symbol of xenon is Xe.,1
+1154,225,112,arith,2,The sum of 16 plus 6 is not 22.,0
+1155,133,66,element,0,The chemical symbol for potassium is Ag.,0
+1156,274,137,arith,3,"If you add 17 plus 18, you get 35.",1
+1157,219,109,arith,3,"If you add 2 plus 6, you get 5.",0
+1158,31,15,capital,3,The capital city of Sweden is not Stockholm.,0
+1159,100,50,element,0,The chemical symbol for hydrogen is H.,1
+1160,64,32,capital,3,The capital city of Colombia is Bogota.,1
+1161,166,83,element,0,The chemical symbol for iodine is I.,1
+1162,79,39,capital,1,Jerusalem is the capital city of Vietnam.,0
+1163,271,135,arith,2,The sum of 9 plus 15 is not 24.,0
+1164,292,146,arith,2,The sum of 3 plus 10 is 13.,1
+1165,213,106,arith,2,The sum of 12 plus 19 is not 31.,0
+1166,125,62,element,2,"On the periodic table, phosphorus is not written as P.",0
+1167,61,30,capital,1,Mexico City is not the capital city of Mexico.,0
+1168,190,95,arith,0,17 plus 8 is 25.,1
+1169,208,104,arith,0,9 plus 16 is 25.,1
+1170,140,70,element,1,Zn is the symbol for zinc.,1
+1171,281,140,arith,3,"If you add 5 plus 7, you get 13.",0
+1172,226,113,arith,2,The sum of 6 plus 19 is 25.,1
+1173,159,79,element,1,Co is not the symbol for cobalt.,0
+1174,206,103,arith,1,16 plus 19 equals 35.,1
+1175,159,79,element,3,The symbol of cobalt is not Co.,0
+1176,228,114,arith,1,19 plus 10 equals 29.,1
+1177,243,121,arith,1,11 plus 15 does not equal 26.,0
+1178,87,43,capital,3,The capital city of Pakistan is not Islamabad.,0
+1179,68,34,capital,2,"In Nigeria, the capital is Abuja.",1
+1180,37,18,capital,1,Athens is not the capital city of Greece.,0
+1181,273,136,arith,0,14 plus 16 is 29.,0
+1182,231,115,arith,1,5 plus 18 does not equal 23.,0
+1183,211,105,arith,3,"If you add 18 plus 5, you get 22.",0
+1184,133,66,element,3,The symbol of potassium is Ag.,0
+1185,64,32,capital,2,"In Colombia, the capital is Bogota.",1
+1186,148,74,element,1,Pb is the symbol for lead.,1
+1187,72,36,capital,0,The capital of Ethiopia is not Islamabad.,1
+1188,119,59,element,1,Mg is not the symbol for magnesium.,0
+1189,176,88,element,2,"On the periodic table, krypton is written as Kr.",1
+1190,4,2,capital,2,"In Italy, the capital is Rome.",1
+1191,74,37,capital,3,The capital city of Morocco is Rabat.,1
+1192,145,72,element,1,Au is not the symbol for gold.,0
+1193,190,95,arith,1,17 plus 8 equals 25.,1
+1194,214,107,arith,0,17 plus 11 is 28.,1
+1195,22,11,capital,2,"In Chile, the capital is Santiago.",1
+1196,179,89,element,0,The chemical symbol for xenon is not Xe.,0
+1197,226,113,arith,0,6 plus 19 is 25.,1
+1198,122,61,element,0,The chemical symbol for silicon is not K.,1
+1199,45,22,capital,2,"In Russia, the capital is Copenhagen.",0

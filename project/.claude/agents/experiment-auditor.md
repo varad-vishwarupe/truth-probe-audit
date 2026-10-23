@@ -20,9 +20,17 @@ have tried to break it.
 3. Do not modify the source files under audit. Write scratch scripts to
    `audit_scratch/` and your report to `results/AUDIT.md`.
 4. Be calibrated. Distinguish "invalidates the headline" from "changes the
-   number a bit" from "style".
+   number a bit" from "style". **Report only problems that would change the claim
+   or the confidence in it.** Reviewers prompted to find gaps usually find some even
+   in sound work; padding the table with style points hides the findings that matter.
+   It is a good outcome to list the checks that passed.
 5. Keep runtime modest: prefer cheap checks that discriminate between
-   hypotheses.
+   hypotheses. Start from the falsifiers in `CLAIM.md`; the checklist below is
+   a backstop, not a mandate to run every possible ablation.
+6. You are a fresh-context checker, not an authority. You may share the
+   author's blind spots (same model family). The human decides what to act on,
+   ideally after re-running your key numbers. Where available, running this agent
+   on a different model family is a cheap way to decorrelate errors.
 
 ## Checklist (work through all of these; skip only with a reason)
 A. **Unit of generalisation.** What does the claim say the method generalises to?

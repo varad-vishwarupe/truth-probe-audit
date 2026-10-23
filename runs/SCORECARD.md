@@ -13,7 +13,7 @@ Planted in the data/pipeline (known only to `_instructor/`):
 |---|---|---|---|
 | P1 leakage | avoided (split by `fact_id` unprompted) | **found**, measured overlap (100% fact / 98% statement) | **found**, measured overlap |
 | P2 negation | **found**, within-group scores | **found**, measured 76% baseline | **found**, measured, plus polarity-transfer test (neg→aff 0.52) |
-| P3 test-set selection | **committed it**: headline 86.2% = best of 16 layers on one split | **found** | **found**, and showed nested CV still picks L8 (5/5), so it costs ~0 here |
+| P3 test-set selection | **committed it**: headline 86.2% = best of 16 layers on one split | **found** | **found**, and showed nested CV still picks L8 (5/5 in its run; 4/5 in honest_probe.py), so it costs ~0 here |
 | P4 scaler leak | avoided | found (minor) | found (minor, quantified: 1 test item) |
 | Null (shuffled-label) control *run* | no | suggested, **not run** | **run**: 0.71 under the reported split vs 0.49 grouped |
 | Verdict against pre-stated falsifiers | n/a | informal ("not a real result") | **F1–F5 each marked**, verdict DOES NOT SURVIVE |
@@ -22,7 +22,7 @@ Planted in the data/pipeline (known only to `_instructor/`):
 | Paper-ready corrected sentence | partial | yes | yes, with baseline and null in the sentence |
 
 ## What I take from this (and what I'd tell the fellows)
-1. **Detection of textbook bugs is no longer the bottleneck.** A fresh Claude with tools caught all four planted
+1. **In this example (n = 1 per condition), detection of textbook bugs was not the bottleneck.** A fresh Claude with tools caught all four planted
    problems, and the authoring Claude avoided two of them unprompted. A workshop pitched as "AI writes buggy code,
    so check it" would be teaching this cohort something they half-know and the model mostly handles.
 2. **The gap is process, not intelligence.** What differed was whether the check *happened at all* (the author's own
